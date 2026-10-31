@@ -1,0 +1,2818 @@
+<?php
+$data = json_decode(file_get_contents('data.json'), true);
+?>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Makki Madani Tours & Travels | Islamic Sanctuaries, Incredible India & World Luxury</title>
+  
+  <!-- Premium Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Amiri:ital,wght@0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: {
+              50: '#FDFCF7',
+              100: '#FAF6ED',
+              200: '#F5EEDF',
+              300: '#ECE2CA',
+              400: '#DFCDB0',
+              500: '#D2B988',
+            },
+            gold: {
+              100: '#FFF9E1',
+              200: '#FDF0B5',
+              300: '#F5DF7E',
+              400: '#ECC74B',
+              500: '#D4AF37', // Authentic Royal Metallic Gold
+              600: '#BA880D',
+              700: '#91690A',
+              800: '#674A07',
+              900: '#3D2A05',
+            },
+            royal: {
+              espresso: '#1F1812',
+              charcoal: '#13100D',
+              bronze: '#2C2218',
+              velvet: '#241B13'
+            }
+          },
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            playfair: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            arabic: ['Amiri', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ========================================================= */
+    /* ULTRA-CRISP HARDWARE RENDERING (ZERO TEXT BLUR)           */
+    /* ========================================================= */
+    *, *::before, *::after {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      background-color: #FAF6ED;
+      color: #241B13;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(212, 175, 55, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(212, 175, 55, 0.09) 0%, transparent 45%);
+    }
+
+    /* Metallic Gold Foil Effect */
+    .gold-foil-text {
+      background: linear-gradient(135deg, #7A570C 0%, #D4AF37 32%, #FFF4BF 50%, #B8860B 75%, #593E07 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.15));
+    }
+
+    /* Shimmering Dynamic Gold Button */
+    .btn-gold-luxury {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #B8860B 0%, #D4AF37 45%, #9E7311 100%);
+      box-shadow: 0 4px 18px rgba(184, 134, 11, 0.35);
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      border: 1px solid rgba(255, 244, 191, 0.65);
+    }
+
+    .btn-gold-luxury::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -70%;
+      width: 45%;
+      height: 200%;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.75) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: rotate(25deg);
+      animation: buttonSweep 4s infinite ease-in-out;
+    }
+
+    @keyframes buttonSweep {
+      0% { left: -75%; }
+      30%, 100% { left: 140%; }
+    }
+
+    .btn-gold-luxury:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(212, 175, 55, 0.55);
+      filter: brightness(1.05);
+    }
+
+    /* Islamic Mehrab Arch Shape */
+    .mehrab-arch {
+      border-top-left-radius: 50% 28%;
+      border-top-right-radius: 50% 28%;
+      border-bottom-left-radius: 26px;
+      border-bottom-right-radius: 26px;
+    }
+
+    .element-card-arch {
+      border-top-left-radius: 46px;
+      border-top-right-radius: 46px;
+      border-bottom-left-radius: 22px;
+      border-bottom-right-radius: 22px;
+    }
+
+    /* Arabesque Micro Texture */
+    .arabesque-pattern {
+      background-image: radial-gradient(#D4AF37 0.95px, transparent 0.95px);
+      background-size: 22px 22px;
+      opacity: 0.22;
+    }
+
+    .glass-cream {
+      background: rgba(253, 250, 242, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+    }
+
+    /* ========================================================= */
+    /* 3D FLOATING COVERFLOW CAROUSEL (SPRING DAMPED & SPACIOUS)  */
+    /* ========================================================= */
+    .carousel-3d-stage {
+      perspective: 1400px;
+      perspective-origin: 50% 50%;
+      overflow: visible;
+      touch-action: pan-y;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .carousel-3d-track {
+      position: relative;
+      width: 100%;
+      height: 560px;
+      transform-style: preserve-3d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-3d-card {
+      position: absolute;
+      width: 330px;
+      height: 510px;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      cursor: grab;
+      border-radius: 28px;
+      transform: translate3d(0, 0, 0);
+      will-change: transform, opacity;
+      transition: filter 0.3s ease;
+    }
+
+    .carousel-3d-card:active {
+      cursor: grabbing;
+    }
+
+    /* Levitation floating animation */
+    @keyframes floatingBobbing {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-9px);
+      }
+    }
+
+    .floating-element-body {
+      animation: floatingBobbing 6s ease-in-out infinite;
+      transform: translateZ(0);
+      will-change: transform;
+    }
+
+    /* Floor Reflection Halo */
+    .card-reflection {
+      position: absolute;
+      bottom: -45px;
+      left: 12%;
+      width: 76%;
+      height: 40px;
+      background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.45) 0%, rgba(212, 175, 55, 0) 70%);
+      filter: blur(10px);
+      transform: rotateX(90deg);
+      pointer-events: none;
+    }
+
+    /* Gold Metallic Border Wrapper */
+    .gold-foil-border {
+      background: linear-gradient(145deg, #FFF6D1 0%, #D4AF37 38%, #8E670A 75%, #F7E496 100%);
+      padding: 2.2px;
+      border-radius: 28px;
+    }
+
+    #particles-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 5;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col relative selection:bg-gold-200 selection:text-gold-900">
+
+  <!-- Floating Golden Dust Particle Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ================= TOP LUXURY NOTIFICATION BAR ================= -->
+  <div class="bg-gradient-to-r from-royal-charcoal via-royal-espresso to-royal-charcoal text-amber-100 text-xs py-2 px-4 text-center border-b border-gold-600/40 tracking-wider relative z-20">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <span class="hidden sm:inline-flex items-center gap-2 font-medium">
+        <i class="fa-solid fa-kaaba text-gold-400"></i> Authorized Luxury Pilgrimage & Premium Global Holidays Facilitator
+      </span>
+      <div class="flex items-center justify-center gap-4 mx-auto sm:mx-0 font-semibold text-[11px] sm:text-xs">
+        <span class="text-gold-300"><i class="fa-solid fa-phone mr-1"></i> +91 98765 43210</span>
+        <span class="text-gold-500/60">|</span>
+        <span class="text-cream-200"><i class="fa-solid fa-shield-halved text-gold-400 mr-1"></i> 100% Certified Stays & Direct Visas</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= LUXURY HEADER & NAVIGATION WITH EXACT EMBLEM ================= -->
+  <header class="sticky top-0 z-50 glass-cream border-b border-gold-400/40 shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Logo with Authentic Circular Emblem Rendering -->
+        <a href="#home" onclick="showPage('page-home')" class="flex items-center gap-3.5 group">
+          <div class="relative w-14 h-14 rounded-full p-0.5 bg-gradient-to-tr from-gold-600 via-gold-200 to-gold-700 shadow-md transition-transform duration-500 group-hover:rotate-6 flex-shrink-0">
+            <div class="w-full h-full rounded-full bg-cream-50 flex items-center justify-center overflow-hidden border border-gold-400 p-0.5 shadow-inner">
+              
+              <!-- Exact Makki Madani Circular Emblem Artwork -->
+              <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow">
+                <defs>
+                  <linearGradient id="richGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#D4AF37"/>
+                    <stop offset="25%" stop-color="#FFF5C2"/>
+                    <stop offset="50%" stop-color="#B8860B"/>
+                    <stop offset="75%" stop-color="#FEECA1"/>
+                    <stop offset="100%" stop-color="#805B10"/>
+                  </linearGradient>
+                  <radialGradient id="creamBg" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#FFFDF7"/>
+                    <stop offset="70%" stop-color="#F6EEDB"/>
+                    <stop offset="100%" stop-color="#E2CCA0"/>
+                  </radialGradient>
+                  <filter id="goldShine" x="-10%" y="-10%" width="120%" height="120%">
+                    <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#805B10" flood-opacity="0.35"/>
+                  </filter>
+                </defs>
+
+                <!-- Cream Marble Background -->
+                <circle cx="100" cy="100" r="97" fill="url(#creamBg)"/>
+                
+                <!-- Concentric Arabesque Outer Pattern Rings -->
+                <circle cx="100" cy="100" r="94" fill="none" stroke="url(#richGoldGrad)" stroke-width="3"/>
+                <circle cx="100" cy="100" r="87" fill="none" stroke="url(#richGoldGrad)" stroke-width="1.8" stroke-dasharray="3.5, 2.5"/>
+                <circle cx="100" cy="100" r="82" fill="none" stroke="url(#richGoldGrad)" stroke-width="1.5"/>
+
+                <!-- Crescent Moon Arc -->
+                <path d="M 68 34 A 65 65 0 1 0 154 144 A 55 55 0 1 1 68 34 Z" fill="url(#richGoldGrad)" filter="url(#goldShine)"/>
+
+                <!-- Left Minaret -->
+                <rect x="74" y="38" width="5.5" height="42" fill="url(#richGoldGrad)"/>
+                <polygon points="76.7,24 74,38 79.5,38" fill="url(#richGoldGrad)"/>
+                <circle cx="76.7" cy="22" r="1.5" fill="url(#richGoldGrad)"/>
+
+                <!-- Right Minaret -->
+                <rect x="120" y="38" width="5.5" height="42" fill="url(#richGoldGrad)"/>
+                <polygon points="122.7,24 120,38 125.5,38" fill="url(#richGoldGrad)"/>
+                <circle cx="122.7" cy="22" r="1.5" fill="url(#richGoldGrad)"/>
+
+                <!-- Central Dome & Finial -->
+                <path d="M 88 58 Q 100 30 112 58 Z" fill="url(#richGoldGrad)"/>
+                <line x1="100" y1="30" x2="100" y2="23" stroke="url(#richGoldGrad)" stroke-width="2"/>
+                <circle cx="100" cy="21" r="2" fill="url(#richGoldGrad)"/>
+
+                <!-- Holy Kaaba Cuboid Form -->
+                <polygon points="80,72 100,60 120,72 100,84" fill="#3D2D0C"/>
+                <polygon points="80,72 100,84 100,122 80,108" fill="#281D05"/>
+                <polygon points="100,84 120,72 120,108 100,122" fill="#4E3B12"/>
+                
+                <!-- Kaaba Golden Kiswa Belt (Hizam) -->
+                <polygon points="80,78 100,90 100,94 80,82" fill="url(#richGoldGrad)"/>
+                <polygon points="100,90 120,78 120,82 100,94" fill="url(#richGoldGrad)"/>
+                
+                <!-- Kaaba Door (Bab al-Kaaba) -->
+                <rect x="105" y="93" width="7" height="15" rx="1" fill="url(#richGoldGrad)"/>
+
+                <!-- Interlocking 'M' Monogram Symbol -->
+                <path d="M 78 118 L 88 88 L 100 110 L 112 88 L 122 118 L 114 118 L 107 98 L 100 114 L 93 98 L 86 118 Z" fill="url(#richGoldGrad)" filter="url(#goldShine)"/>
+
+                <!-- Five-Pointed Golden Star -->
+                <polygon points="135,92 138,98 145,99 140,104 141,111 135,107 129,111 130,104 125,99 132,98" fill="url(#richGoldGrad)" filter="url(#goldShine)"/>
+
+                <!-- Lower Arc Filigree -->
+                <path d="M 45 130 Q 100 170 155 130" fill="none" stroke="url(#richGoldGrad)" stroke-width="1.2"/>
+              </svg>
+
+            </div>
+          </div>
+          <div>
+            <span class="block font-cinzel text-xl sm:text-2xl font-bold tracking-wider text-royal-espresso leading-none">
+              MAKKI MADANI
+            </span>
+            <span class="font-cinzel text-[10px] sm:text-xs tracking-[0.28em] text-gold-700 font-bold uppercase mt-1 block">
+              Tours and Travels
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-6 font-semibold text-sm tracking-wide text-royal-espresso">
+          <a href="#home" onclick="showPage('page-home')" class="hover:text-gold-700 transition relative py-1">Home</a>
+          <a href="#destinations-section" onclick="showPage('page-home')" class="hover:text-gold-700 transition relative py-1">Destinations</a>
+          <a href="javascript:void(0)" onclick="filterCategoryDirect('islamic')" class="hover:text-gold-700 transition relative py-1 text-gold-800 font-bold">Islamic Sanctuaries</a>
+          <a href="javascript:void(0)" onclick="filterCategoryDirect('indian')" class="hover:text-gold-700 transition relative py-1">Incredible India</a>
+          <a href="javascript:void(0)" onclick="filterCategoryDirect('international')" class="hover:text-gold-700 transition relative py-1">International</a>
+          <a href="#customer-trust-section" onclick="showPage('page-home')" class="hover:text-gold-700 transition relative py-1 font-bold text-gold-800 flex items-center gap-1.5">
+            <i class="fa-solid fa-award text-gold-600"></i> Trust & Reviews
+          </a>
+          <a href="#contact-section" onclick="showPage('page-home')" class="hover:text-gold-700 transition relative py-1">Contact</a>
+        </nav>
+
+        <!-- Right Quick Action Buttons -->
+        <div class="hidden sm:flex items-center gap-3">
+          <button onclick="openEstimatorModal()" class="px-4 py-2.5 rounded-full border border-gold-500/80 text-gold-900 bg-gold-500/10 hover:bg-gold-500/20 text-xs font-bold tracking-wider transition flex items-center gap-2 shadow-sm">
+            <i class="fa-solid fa-calculator text-gold-700"></i> Cost Estimator
+          </button>
+          
+          <button onclick="scrollToDestinations()" class="btn-gold-luxury px-6 py-2.5 rounded-full text-white text-xs font-bold tracking-wider uppercase flex items-center gap-2">
+            <span>Explore Tours</span>
+            <i class="fa-solid fa-arrow-right-long text-xs"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Trigger -->
+        <div class="flex items-center gap-2 lg:hidden">
+          <button onclick="openEstimatorModal()" class="w-10 h-10 rounded-full border border-gold-500 bg-cream-100 flex items-center justify-center text-gold-800 shadow-sm">
+            <i class="fa-solid fa-calculator text-sm"></i>
+          </button>
+          <button id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Toggle Navigation" class="w-10 h-10 rounded-full bg-cream-200 border border-gold-400 text-royal-espresso flex items-center justify-center shadow-sm">
+            <i class="fa-solid fa-bars text-lg" id="menuIcon"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Slide Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-cream-100 border-b border-gold-300 px-6 py-5 shadow-2xl">
+      <div class="flex flex-col gap-4 font-semibold text-base text-royal-espresso">
+        <a href="#home" onclick="showPage('page-home'); toggleMobileMenu();" class="py-1 border-b border-cream-300">Home</a>
+        <a href="#destinations-section" onclick="showPage('page-home'); toggleMobileMenu();" class="py-1 border-b border-cream-300">Browse Destinations</a>
+        <button onclick="filterCategoryDirect('islamic'); toggleMobileMenu();" class="text-left py-1 border-b border-cream-300 font-bold text-gold-800">
+          <i class="fa-solid fa-kaaba mr-2"></i> Islamic Religious (Makkah, Madinah...)
+        </button>
+        <button onclick="filterCategoryDirect('indian'); toggleMobileMenu();" class="text-left py-1 border-b border-cream-300 font-bold text-gold-800">
+          <i class="fa-solid fa-mountain mr-2"></i> Incredible India (Kashmir, Kerala...)
+        </button>
+        <button onclick="filterCategoryDirect('international'); toggleMobileMenu();" class="text-left py-1 border-b border-cream-300 font-bold text-gold-800">
+          <i class="fa-solid fa-plane-departure mr-2"></i> International (Dubai, Cruise...)
+        </button>
+        <a href="#customer-trust-section" onclick="showPage('page-home'); toggleMobileMenu();" class="py-1 border-b border-cream-300 text-gold-800 font-bold">
+          <i class="fa-solid fa-award mr-2"></i> Customer Trust & Pilgrims Experience
+        </a>
+        <a href="#contact-section" onclick="showPage('page-home'); toggleMobileMenu();" class="py-1 border-b border-cream-300">Contact & Support</a>
+        <div class="pt-2 flex flex-col gap-2.5">
+          <button onclick="openEstimatorModal(); toggleMobileMenu();" class="w-full py-3 rounded-xl border border-gold-600 bg-white text-gold-900 text-sm font-bold shadow-sm">
+            Instant Cost Calculator
+          </button>
+          <button onclick="scrollToDestinations(); toggleMobileMenu();" class="btn-gold-luxury w-full py-3 rounded-xl text-white text-sm font-bold uppercase tracking-wider">
+            Explore 3-Tier Packages
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT WRAPPER ================= -->
+  <main class="flex-grow">
+
+    <!-- ================= VIEW 1: HOMEPAGE ================= -->
+    <div id="page-home" class="transition-opacity duration-300">
+      
+      <!-- HERO BANNER WITH MEHRAB ARCHWAY -->
+      <section id="home" class="relative pt-6 pb-16 md:py-16 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="relative rounded-3xl p-2 sm:p-4 bg-gradient-to-b from-gold-300 via-gold-100 to-gold-400 shadow-2xl border border-gold-300">
+            
+            <div class="relative overflow-hidden mehrab-arch min-h-[500px] md:min-h-[600px] flex items-center justify-center text-center p-6 md:p-14 bg-royal-charcoal">
+              
+              <!-- High-Resolution Holy Haramain Panorama -->
+              <div class="absolute inset-0 z-0">
+                <img 
+                  src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=2000&q=85" 
+                  alt="Holy Kaaba Makkah & Madinah Panorama" 
+                  class="w-full h-full object-cover opacity-45 transform scale-100 transition-transform duration-1000 ease-out hover:scale-105 filter brightness-90"
+                  onerror="this.src='https://placehold.co/1920x1080/1a1815/d4af37?text=Sacred+Sanctuaries'"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-royal-charcoal via-royal-charcoal/60 to-transparent"></div>
+                <div class="absolute inset-0 arabesque-pattern pointer-events-none"></div>
+              </div>
+
+              <!-- Arch Top SVG Contour -->
+              <div class="absolute top-0 inset-x-0 flex justify-center pointer-events-none opacity-45">
+                <svg width="420" height="90" viewBox="0 0 420 90" fill="none">
+                  <path d="M0 0 C110 0, 170 80, 210 80 C250 80, 310 0, 420 0" stroke="url(#richGoldGrad)" stroke-width="3" fill="none"/>
+                  <circle cx="210" cy="80" r="5" fill="#D4AF37"/>
+                </svg>
+              </div>
+
+              <!-- Hero Foreground Content -->
+              <div class="relative z-20 max-w-3xl mx-auto text-white">
+                
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cream-50/15 backdrop-blur-md border border-gold-400/50 text-gold-300 text-xs sm:text-sm font-cinzel mb-5 tracking-widest uppercase">
+                  <i class="fa-regular fa-star text-gold-400 text-xs"></i>
+                  Islamic Pilgrimages • India Tours • Global Holidays
+                  <i class="fa-regular fa-star text-gold-400 text-xs"></i>
+                </div>
+
+                <h1 class="font-cinzel text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-wide text-white leading-tight mb-4 drop-shadow-md">
+                  Embark on Your <br>
+                  <span class="gold-foil-text drop-shadow">Sacred & Luxury Journeys</span>
+                </h1>
+
+                <p class="text-cream-100 text-sm sm:text-lg max-w-2xl mx-auto font-medium leading-relaxed mb-8 opacity-95">
+                  Experience seamless devotion across Makkah, Madinah, Karbala, and Egypt, breathtaking Indian getaways from Kashmir to Kerala, and luxury international voyages worldwide.
+                </p>
+
+                <!-- Dual Action Dynamic Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <button onclick="scrollToDestinations()" class="btn-gold-luxury w-full sm:w-auto px-8 py-3.5 rounded-full text-white font-bold text-sm tracking-wider uppercase flex items-center justify-center gap-2">
+                    <span>Explore 3-Tier Packages</span>
+                    <i class="fa-solid fa-compass text-gold-200"></i>
+                  </button>
+
+                  <button onclick="openEstimatorModal()" class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-cream-50/15 hover:bg-cream-50/25 backdrop-blur-md text-white border border-gold-400 font-bold text-sm tracking-wider transition flex items-center justify-center gap-2 shadow-sm">
+                    <i class="fa-solid fa-calculator text-gold-300"></i>
+                    <span>Calculate Trip Cost</span>
+                  </button>
+                </div>
+
+                <!-- 3 Pillars Indicator -->
+                <div class="mt-10 pt-6 border-t border-gold-500/40 grid grid-cols-3 gap-2 sm:gap-6 text-center">
+                  <div onclick="filterCategoryDirect('islamic')" class="cursor-pointer group">
+                    <span class="block font-cinzel text-lg sm:text-2xl font-extrabold text-gold-300 group-hover:text-gold-200">7 Holy Sites</span>
+                    <span class="text-[10px] sm:text-xs text-cream-200 uppercase tracking-wider font-semibold">Islamic Religious</span>
+                  </div>
+                  <div onclick="filterCategoryDirect('indian')" class="cursor-pointer group">
+                    <span class="block font-cinzel text-lg sm:text-2xl font-extrabold text-gold-300 group-hover:text-gold-200">11 Paradises</span>
+                    <span class="text-[10px] sm:text-xs text-cream-200 uppercase tracking-wider font-semibold">Incredible India</span>
+                  </div>
+                  <div onclick="filterCategoryDirect('international')" class="cursor-pointer group">
+                    <span class="block font-cinzel text-lg sm:text-2xl font-extrabold text-gold-300 group-hover:text-gold-200">6 Escapes</span>
+                    <span class="text-[10px] sm:text-xs text-cream-200 uppercase tracking-wider font-semibold">World Holidays</span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- 3-CATEGORY FLOATING ARCHITECTURAL ELEMENT CAROUSEL             -->
+      <!-- ============================================================== -->
+      <section id="destinations-section" class="py-16 md:py-24 relative overflow-hidden bg-cream-50/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <!-- Section Heading -->
+          <div class="text-center max-w-3xl mx-auto mb-6">
+            <span class="px-4 py-1.5 rounded-full bg-gold-500/15 border border-gold-500/40 text-gold-800 text-xs font-cinzel font-bold tracking-widest uppercase">
+              Curated Architectural Escapes
+            </span>
+            <h2 class="font-cinzel text-2xl sm:text-4xl font-extrabold text-royal-espresso mt-3 mb-2 tracking-wide">
+              Explore Our Signature Destinations
+            </h2>
+            <p class="text-neutral-600 text-xs sm:text-sm font-medium">
+              Choose your category below. Each destination features custom <strong>Normal</strong>, <strong>Premium</strong>, and <strong>Pro VIP</strong> tiers.
+            </p>
+          </div>
+
+          <!-- CATEGORY SELECTOR TABS -->
+          <div class="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto mb-6">
+            <button id="catBtn-islamic" onclick="changeCategory('islamic')" class="px-5 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-wider uppercase transition shadow-md bg-gold-600 text-white flex items-center gap-2">
+              <i class="fa-solid fa-kaaba"></i>
+              <span>1. Islamic Religious (7 Sites)</span>
+            </button>
+            <button id="catBtn-indian" onclick="changeCategory('indian')" class="px-5 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-wider uppercase transition bg-white text-royal-espresso border border-gold-400 hover:border-gold-600 flex items-center gap-2 shadow-sm">
+              <i class="fa-solid fa-mountain"></i>
+              <span>2. Incredible India (11 Tours)</span>
+            </button>
+            <button id="catBtn-international" onclick="changeCategory('international')" class="px-5 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-wider uppercase transition bg-white text-royal-espresso border border-gold-400 hover:border-gold-600 flex items-center gap-2 shadow-sm">
+              <i class="fa-solid fa-plane-departure"></i>
+              <span>3. International (6 Holidays)</span>
+            </button>
+          </div>
+
+          <!-- Controls Bar & View Switcher -->
+          <div class="flex flex-col sm:flex-row items-center justify-between max-w-4xl mx-auto mb-8 px-4 gap-4">
+            
+            <!-- View Mode Switcher -->
+            <div class="inline-flex p-1 rounded-full bg-cream-200 border border-gold-400 shadow-sm text-xs font-bold font-cinzel">
+              <button id="viewBtn3D" onclick="switchPackageView('3d')" class="px-4 py-2 rounded-full bg-gold-600 text-white shadow-sm transition">
+                <i class="fa-solid fa-cube mr-1"></i> 3D Floating Landmark View
+              </button>
+              <button id="viewBtnGrid" onclick="switchPackageView('grid')" class="px-4 py-2 rounded-full text-royal-espresso hover:text-gold-800 transition">
+                <i class="fa-solid fa-grip mr-1"></i> Curated Grid View
+              </button>
+            </div>
+
+            <!-- Active Landmark Stepper -->
+            <div id="carouselControlsGroup" class="flex items-center gap-3">
+              <button onclick="stepCarousel(-1)" aria-label="Previous Landmark" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white border-2 border-gold-400 text-gold-800 hover:bg-gold-500 hover:text-white transition flex items-center justify-center shadow-md active:scale-95">
+                <i class="fa-solid fa-chevron-left text-xs sm:text-sm"></i>
+              </button>
+
+              <div class="text-center px-4 py-1.5 rounded-full bg-white border border-gold-400/80 shadow-sm min-w-[200px]">
+                <div class="inline-flex items-center gap-2 text-xs font-cinzel font-bold text-royal-espresso">
+                  <span class="w-2.5 h-2.5 rounded-full bg-gold-500 animate-pulse"></span>
+                  <span id="carouselActiveLandmarkName">MAKKAH AL-MUKARRAMAH</span>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-1.5">
+                <button id="autoplayToggleBtn" onclick="toggleCarouselAutoplay()" aria-label="Toggle Autoplay" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white border-2 border-gold-400 text-gold-800 hover:bg-gold-500 hover:text-white transition flex items-center justify-center shadow-md active:scale-95">
+                  <i class="fa-solid fa-pause text-xs" id="autoplayIcon"></i>
+                </button>
+                <button onclick="stepCarousel(1)" aria-label="Next Landmark" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white border-2 border-gold-400 text-gold-800 hover:bg-gold-500 hover:text-white transition flex items-center justify-center shadow-md active:scale-95">
+                  <i class="fa-solid fa-chevron-right text-xs sm:text-sm"></i>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- 3D CAROUSEL STAGE (Zero Overlap, Generous X-Spacing) -->
+          <div class="carousel-3d-stage py-4 overflow-hidden" id="carouselStage">
+            <div class="carousel-3d-track" id="carouselTrack">
+              <!-- Rendered via JS with Cutout Element Cards -->
+            </div>
+          </div>
+
+          <!-- ALTERNATE GRID VIEW -->
+          <div id="destinationsGridView" class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 py-4">
+            <!-- Rendered dynamically via JS -->
+          </div>
+
+          <!-- Active Landmark Quick-Action Banner -->
+          <div class="mt-8 text-center">
+            <div class="inline-flex flex-col sm:flex-row items-center gap-4 p-4 sm:p-5 rounded-2xl bg-white border-2 border-gold-400 shadow-xl max-w-2xl mx-auto">
+              <div class="flex items-center gap-3 text-left">
+                <div class="w-14 h-14 rounded-2xl bg-gold-500/15 border border-gold-400 flex items-center justify-center text-gold-800 shrink-0 shadow-inner">
+                  <i class="fa-solid fa-monument text-2xl" id="activeLandmarkIcon"></i>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="font-cinzel text-base font-bold text-royal-espresso" id="activeLandmarkTitle">Makkah Al-Mukarramah</span>
+                    <span class="px-2.5 py-0.5 rounded text-[10px] bg-gold-500 text-white font-bold uppercase tracking-wider" id="activeLandmarkBadge">Islamic Religious</span>
+                  </div>
+                  <span class="text-xs text-neutral-600 block mt-1 font-medium" id="activeLandmarkSubtitle">The Holy Kaaba, Clock Tower, and Sacred Ziyarat</span>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-2 w-full sm:w-auto shrink-0 justify-end">
+                <button onclick="openCurrentSelectedLandmarkDetail()" class="btn-gold-luxury px-6 py-2.5 rounded-full text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 w-full sm:w-auto justify-center">
+                  <span>View 3 Tiers</span>
+                  <i class="fa-solid fa-arrow-right-long text-xs"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- NEW: CUSTOMER TRUST, PILGRIM EXPERIENCES & REVIEWS SECTION    -->
+      <!-- ============================================================== -->
+      <section id="customer-trust-section" class="py-20 bg-gradient-to-b from-cream-100 via-cream-50 to-cream-100 border-t-2 border-gold-300 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <!-- Section Title & Verified Trust Metrics -->
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/15 border border-gold-500/50 text-gold-800 text-xs font-cinzel font-bold tracking-widest uppercase mb-3">
+              <i class="fa-solid fa-certificate text-gold-600"></i>
+              Real Stories • Authentic Faith • Verified Excellence
+            </div>
+            <h2 class="font-cinzel text-2xl sm:text-4xl md:text-5xl font-extrabold text-royal-espresso">
+              Customer Trust & Pilgrim Experiences
+            </h2>
+            <p class="text-neutral-700 text-sm sm:text-base mt-3 font-medium leading-relaxed">
+              Explore firsthand testimonials, unfiltered video journeys, and authentic gallery memories captured across our sacred pilgrimages and luxury holiday tours.
+            </p>
+          </div>
+
+          <!-- Trust Counters / Stat Badges -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-14">
+            <div class="p-5 sm:p-6 rounded-2xl bg-white border border-gold-300/80 shadow-md text-center transform hover:-translate-y-1 transition duration-300">
+              <div class="w-12 h-12 rounded-full bg-gold-500/15 text-gold-700 mx-auto flex items-center justify-center text-xl mb-3 shadow-inner">
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <div class="font-cinzel text-2xl sm:text-3xl font-extrabold text-royal-espresso">15,000+</div>
+              <p class="text-xs text-neutral-600 font-semibold mt-1 uppercase tracking-wider">Happy Pilgrims & Travelers</p>
+            </div>
+
+            <div class="p-5 sm:p-6 rounded-2xl bg-white border border-gold-300/80 shadow-md text-center transform hover:-translate-y-1 transition duration-300">
+              <div class="w-12 h-12 rounded-full bg-gold-500/15 text-gold-700 mx-auto flex items-center justify-center text-xl mb-3 shadow-inner">
+                <i class="fa-solid fa-star text-gold-500"></i>
+              </div>
+              <div class="font-cinzel text-2xl sm:text-3xl font-extrabold text-royal-espresso">4.9 / 5.0</div>
+              <p class="text-xs text-neutral-600 font-semibold mt-1 uppercase tracking-wider">Trustpilot & Google Rating</p>
+            </div>
+
+            <div class="p-5 sm:p-6 rounded-2xl bg-white border border-gold-300/80 shadow-md text-center transform hover:-translate-y-1 transition duration-300">
+              <div class="w-12 h-12 rounded-full bg-gold-500/15 text-gold-700 mx-auto flex items-center justify-center text-xl mb-3 shadow-inner">
+                <i class="fa-solid fa-kaaba text-gold-700"></i>
+              </div>
+              <div class="font-cinzel text-2xl sm:text-3xl font-extrabold text-royal-espresso">480+</div>
+              <p class="text-xs text-neutral-600 font-semibold mt-1 uppercase tracking-wider">Completed Umrah Batches</p>
+            </div>
+
+            <div class="p-5 sm:p-6 rounded-2xl bg-white border border-gold-300/80 shadow-md text-center transform hover:-translate-y-1 transition duration-300">
+              <div class="w-12 h-12 rounded-full bg-gold-500/15 text-gold-700 mx-auto flex items-center justify-center text-xl mb-3 shadow-inner">
+                <i class="fa-solid fa-passport text-gold-700"></i>
+              </div>
+              <div class="font-cinzel text-2xl sm:text-3xl font-extrabold text-royal-espresso">100%</div>
+              <p class="text-xs text-neutral-600 font-semibold mt-1 uppercase tracking-wider">Visa & Voucher Issuance</p>
+            </div>
+          </div>
+
+          <!-- Section Sub-Tabs (All Highlights, Pilgrim Videos, Photo Gallery, Verified Reviews) -->
+          <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 mb-10">
+            <button id="trustTabBtn-all" onclick="filterTrustContent('all')" class="px-5 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-wider uppercase transition shadow-md bg-gold-600 text-white flex items-center gap-2">
+              <i class="fa-solid fa-layer-group"></i> All Highlights
+            </button>
+            <button id="trustTabBtn-videos" onclick="filterTrustContent('videos')" class="px-5 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-wider uppercase transition bg-white text-royal-espresso border border-gold-400 hover:border-gold-600 flex items-center gap-2 shadow-sm">
+              <i class="fa-solid fa-play"></i> Pilgrim Videos (6)
+            </button>
+            <button id="trustTabBtn-photos" onclick="filterTrustContent('photos')" class="px-5 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-wider uppercase transition bg-white text-royal-espresso border border-gold-400 hover:border-gold-600 flex items-center gap-2 shadow-sm">
+              <i class="fa-solid fa-images"></i> Tour Photos (8)
+            </button>
+            <button id="trustTabBtn-reviews" onclick="filterTrustContent('reviews')" class="px-5 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-wider uppercase transition bg-white text-royal-espresso border border-gold-400 hover:border-gold-600 flex items-center gap-2 shadow-sm">
+              <i class="fa-solid fa-comment-dots"></i> Verified Reviews
+            </button>
+
+            <!-- Write A Review Button -->
+            <button onclick="openReviewSubmitModal()" class="px-5 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-wider uppercase transition bg-royal-charcoal text-gold-300 hover:text-white border border-gold-500 flex items-center gap-2 shadow-sm ml-auto">
+              <i class="fa-solid fa-pen-to-square"></i> Share Your Review
+            </button>
+          </div>
+
+          <!-- 1. VIDEO TESTIMONIALS SUBSECTION -->
+          <div id="trustBlock-videos" class="mb-14">
+            <div class="flex items-center justify-between mb-6 pb-2 border-b border-gold-300/60">
+              <div class="flex items-center gap-2.5">
+                <span class="w-8 h-8 rounded-full bg-gold-500/20 text-gold-700 flex items-center justify-center text-sm font-bold">
+                  <i class="fa-solid fa-video"></i>
+                </span>
+                <h3 class="font-cinzel text-xl sm:text-2xl font-bold text-royal-espresso">
+                  Pilgrim Video Diaries & Real Feedback
+                </h3>
+              </div>
+              <span class="text-xs text-neutral-500 font-semibold hidden sm:inline">Click any video to play interview</span>
+            </div>
+
+            <!-- Videos Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              
+              <!-- Video Card 1 -->
+              <div onclick="openVideoPlayer('Haji Farooq Ahmad & Family', 'Umrah Pro VIP Tier Experience', 'Makkah Clock Tower Suite feedback & smooth Ziyarat', 'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=800&q=80', '4:18 mins', 'Delhi, India')" class="group relative rounded-2xl overflow-hidden bg-royal-charcoal border-2 border-gold-400/80 shadow-lg cursor-pointer transform hover:-translate-y-1.5 transition-all duration-300">
+                <div class="relative h-56 overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=800&q=80" alt="Video Review Makkah" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-90">
+                  <div class="absolute inset-0 bg-gradient-to-t from-royal-charcoal via-transparent to-black/40"></div>
+                  
+                  <!-- Play Button Overlay -->
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-14 h-14 rounded-full bg-gold-500/90 group-hover:bg-gold-400 text-royal-charcoal flex items-center justify-center text-lg pl-1 shadow-2xl transition-transform duration-300 group-hover:scale-110">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                  </div>
+
+                  <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-black/75 text-[10px] text-white font-bold font-cinzel">
+                    4:18 mins
+                  </span>
+                  <span class="absolute top-3 left-3 px-2.5 py-0.5 rounded bg-gold-600 text-white text-[10px] font-bold uppercase tracking-wider font-cinzel">
+                    Umrah VIP Review
+                  </span>
+                </div>
+
+                <div class="p-4 bg-white border-t border-gold-300/80">
+                  <h4 class="font-cinzel text-sm font-bold text-royal-espresso group-hover:text-gold-700 transition">
+                    Haji Farooq Ahmad & Family
+                  </h4>
+                  <p class="text-xs text-neutral-600 font-medium mt-1">
+                    "Zero-meter Haram suite made prayers with my elderly parents effortless."
+                  </p>
+                  <div class="flex items-center justify-between text-[11px] text-neutral-400 mt-3 pt-2 border-t border-neutral-100">
+                    <span>Delhi, India</span>
+                    <span class="text-gold-600 font-bold"><i class="fa-solid fa-circle-check text-green-600"></i> Verified Batch 2026</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Video Card 2 -->
+              <div onclick="openVideoPlayer('Dr. Nadeem & Dr. Ayesha', 'Executive Karbala & Najaf Ziyarat', 'Insightful historical guides & serene VIP accommodation', 'https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=800&q=80', '5:42 mins', 'Mumbai, India')" class="group relative rounded-2xl overflow-hidden bg-royal-charcoal border-2 border-gold-400/80 shadow-lg cursor-pointer transform hover:-translate-y-1.5 transition-all duration-300">
+                <div class="relative h-56 overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=800&q=80" alt="Video Review Karbala" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-90">
+                  <div class="absolute inset-0 bg-gradient-to-t from-royal-charcoal via-transparent to-black/40"></div>
+                  
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-14 h-14 rounded-full bg-gold-500/90 group-hover:bg-gold-400 text-royal-charcoal flex items-center justify-center text-lg pl-1 shadow-2xl transition-transform duration-300 group-hover:scale-110">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                  </div>
+
+                  <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-black/75 text-[10px] text-white font-bold font-cinzel">
+                    5:42 mins
+                  </span>
+                  <span class="absolute top-3 left-3 px-2.5 py-0.5 rounded bg-gold-600 text-white text-[10px] font-bold uppercase tracking-wider font-cinzel">
+                    Iraq Ziyarat Review
+                  </span>
+                </div>
+
+                <div class="p-4 bg-white border-t border-gold-300/80">
+                  <h4 class="font-cinzel text-sm font-bold text-royal-espresso group-hover:text-gold-700 transition">
+                    Dr. Nadeem & Dr. Ayesha
+                  </h4>
+                  <p class="text-xs text-neutral-600 font-medium mt-1">
+                    "Our personal guide gave deep historical contexts at Najaf and Karbala."
+                  </p>
+                  <div class="flex items-center justify-between text-[11px] text-neutral-400 mt-3 pt-2 border-t border-neutral-100">
+                    <span>Mumbai, India</span>
+                    <span class="text-gold-600 font-bold"><i class="fa-solid fa-circle-check text-green-600"></i> Verified Batch 2026</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Video Card 3 -->
+              <div onclick="openVideoPlayer('Irfan Sheikh & Friends', 'Kashmir Deluxe Winter Tour', 'Houseboat hospitality and snowfall in Gulmarg', 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80', '3:30 mins', 'Hyderabad, India')" class="group relative rounded-2xl overflow-hidden bg-royal-charcoal border-2 border-gold-400/80 shadow-lg cursor-pointer transform hover:-translate-y-1.5 transition-all duration-300">
+                <div class="relative h-56 overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80" alt="Video Review Kashmir" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-90">
+                  <div class="absolute inset-0 bg-gradient-to-t from-royal-charcoal via-transparent to-black/40"></div>
+                  
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-14 h-14 rounded-full bg-gold-500/90 group-hover:bg-gold-400 text-royal-charcoal flex items-center justify-center text-lg pl-1 shadow-2xl transition-transform duration-300 group-hover:scale-110">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                  </div>
+
+                  <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-black/75 text-[10px] text-white font-bold font-cinzel">
+                    3:30 mins
+                  </span>
+                  <span class="absolute top-3 left-3 px-2.5 py-0.5 rounded bg-gold-600 text-white text-[10px] font-bold uppercase tracking-wider font-cinzel">
+                    India Tour Review
+                  </span>
+                </div>
+
+                <div class="p-4 bg-white border-t border-gold-300/80">
+                  <h4 class="font-cinzel text-sm font-bold text-royal-espresso group-hover:text-gold-700 transition">
+                    Irfan Sheikh & Friends
+                  </h4>
+                  <p class="text-xs text-neutral-600 font-medium mt-1">
+                    "Warm Kahwa, Dal Lake shikaras, and private coaches made this unforgettable."
+                  </p>
+                  <div class="flex items-center justify-between text-[11px] text-neutral-400 mt-3 pt-2 border-t border-neutral-100">
+                    <span>Hyderabad, India</span>
+                    <span class="text-gold-600 font-bold"><i class="fa-solid fa-circle-check text-green-600"></i> Verified Tour</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 2. PHOTO GALLERY LIGHTBOX SUBSECTION -->
+          <div id="trustBlock-photos" class="mb-14">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 pb-2 border-b border-gold-300/60 gap-3">
+              <div class="flex items-center gap-2.5">
+                <span class="w-8 h-8 rounded-full bg-gold-500/20 text-gold-700 flex items-center justify-center text-sm font-bold">
+                  <i class="fa-solid fa-camera"></i>
+                </span>
+                <h3 class="font-cinzel text-xl sm:text-2xl font-bold text-royal-espresso">
+                  Pilgrim Memories & Landmark Gallery
+                </h3>
+              </div>
+
+              <!-- Filter Tags -->
+              <div class="flex items-center gap-1.5 text-xs font-bold font-cinzel overflow-x-auto pb-1">
+                <button onclick="filterGalleryPhotos('all')" class="photoFilterBtn px-3 py-1 rounded-full bg-gold-600 text-white shadow-sm" data-tag="all">All</button>
+                <button onclick="filterGalleryPhotos('makkah')" class="photoFilterBtn px-3 py-1 rounded-full bg-white text-royal-espresso border border-gold-300" data-tag="makkah">Makkah</button>
+                <button onclick="filterGalleryPhotos('madinah')" class="photoFilterBtn px-3 py-1 rounded-full bg-white text-royal-espresso border border-gold-300" data-tag="madinah">Madinah</button>
+                <button onclick="filterGalleryPhotos('ziyarat')" class="photoFilterBtn px-3 py-1 rounded-full bg-white text-royal-espresso border border-gold-300" data-tag="ziyarat">Ziyarat</button>
+                <button onclick="filterGalleryPhotos('tours')" class="photoFilterBtn px-3 py-1 rounded-full bg-white text-royal-espresso border border-gold-300" data-tag="tours">Holiday Tours</button>
+              </div>
+            </div>
+
+            <!-- Dynamic Photos Grid -->
+            <div id="galleryPhotoGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- 3. VERIFIED CUSTOMER REVIEWS GRID -->
+          <div id="trustBlock-reviews" class="mb-14">
+            <div class="flex items-center justify-between mb-6 pb-2 border-b border-gold-300/60">
+              <div class="flex items-center gap-2.5">
+                <span class="w-8 h-8 rounded-full bg-gold-500/20 text-gold-700 flex items-center justify-center text-sm font-bold">
+                  <i class="fa-solid fa-quote-left"></i>
+                </span>
+                <h3 class="font-cinzel text-xl sm:text-2xl font-bold text-royal-espresso">
+                  Verified Pilgrim & Traveler Reviews
+                </h3>
+              </div>
+              <button onclick="openReviewSubmitModal()" class="text-xs font-bold text-gold-800 hover:text-gold-900 underline flex items-center gap-1">
+                <i class="fa-solid fa-pen-nib"></i> Write Your Story
+              </button>
+            </div>
+
+            <!-- Reviews Grid Container -->
+            <div id="reviewsGridContainer" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= ABOUT & TRUST SECTION ================= -->
+      <section id="about-section" class="py-16 md:py-20 relative bg-gradient-to-b from-cream-100 to-cream-200/70 border-y border-gold-300/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Info -->
+            <div class="lg:col-span-7 space-y-6">
+              <div class="inline-flex items-center gap-2 text-gold-800 font-cinzel font-bold text-xs tracking-widest uppercase">
+                <span class="w-8 h-0.5 bg-gold-600"></span>
+                The Makki Madani Advantage
+              </div>
+
+              <h2 class="font-cinzel text-2xl sm:text-4xl font-extrabold text-royal-espresso leading-tight">
+                Honoring Your Sacred Trust, <br>
+                <span class="text-gold-700">Delivering Uncompromising Luxury.</span>
+              </h2>
+
+              <p class="text-royal-bron font-normal leading-relaxed text-sm sm:text-base">
+                Whether you seek the spiritual grace of the Holy Kaaba, the golden domes of Karbala and Najaf, the serene backwaters of Kerala, or the skyline wonders of Dubai, <strong>Makki Madani Tours and Travels</strong> ensures every journey is imbued with comfort, authenticity, and peace of mind.
+              </p>
+
+              <!-- Trust Grid -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-gold-300/80 shadow-sm">
+                  <div class="w-8 h-8 rounded-full bg-gold-500/15 text-gold-700 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-certificate text-sm"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-royal-espresso text-sm">Certified Global Access</h4>
+                    <p class="text-xs text-neutral-600 mt-0.5">Direct visa processing for Saudi, Iraq, Egypt, Jordan & UAE.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-gold-300/80 shadow-sm">
+                  <div class="w-8 h-8 rounded-full bg-gold-500/15 text-gold-700 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-utensils text-sm"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-royal-espresso text-sm">Custom Dining & Halal Buffets</h4>
+                    <p class="text-xs text-neutral-600 mt-0.5">Authentic Indian cuisine & international 5-star halal dining.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-gold-300/80 shadow-sm">
+                  <div class="w-8 h-8 rounded-full bg-gold-500/15 text-gold-700 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-car-side text-sm"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-royal-espresso text-sm">Private Chauffeur Fleets</h4>
+                    <p class="text-xs text-neutral-600 mt-0.5">GMC Yukons, luxury Mercedes sedans, and high-deck coaches.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-gold-300/80 shadow-sm">
+                  <div class="w-8 h-8 rounded-full bg-gold-500/15 text-gold-700 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-user-tie text-sm"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-royal-espresso text-sm">Dedicated Tour Butlers</h4>
+                    <p class="text-xs text-neutral-600 mt-0.5">24/7 local guide assistance for Ziyarat, rituals, and VIP tours.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Frame Visual with Authentic Dome Artwork -->
+            <div class="lg:col-span-5">
+              <div class="relative mx-auto max-w-md lg:max-w-none">
+                <div class="absolute -inset-2 rounded-3xl bg-gradient-to-r from-gold-400 to-gold-600 opacity-20 blur-xl"></div>
+                
+                <div class="relative rounded-2xl p-2 bg-gradient-to-b from-gold-300 via-gold-100 to-gold-400 shadow-xl">
+                  <div class="relative rounded-xl overflow-hidden mehrab-arch border-2 border-gold-300/80 bg-royal-charcoal group">
+                    <img 
+                      src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=800&q=85" 
+                      alt="Masjid an Nabawi Green Dome in Madinah" 
+                      class="w-full h-[420px] object-cover transition-transform duration-700 group-hover:scale-105"
+                      onerror="this.src='https://placehold.co/800x1000/1a1815/d4af37?text=Madinah+Al-Munawwarah'"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-royal-charcoal/90 via-royal-charcoal/20 to-transparent"></div>
+                    
+                    <div class="absolute bottom-5 inset-x-5 p-4 rounded-xl glass-cream border border-gold-400 text-center shadow-lg">
+                      <span class="text-xs font-cinzel uppercase tracking-widest text-gold-800 font-bold block mb-1">
+                        Holy City Sanctuary
+                      </span>
+                      <p class="text-xs text-royal-espresso font-semibold">
+                        Zero-meter and courtyard walking distances guaranteed across all our holy sanctuary packages.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= FAQ SECTION ================= -->
+      <section class="py-16 bg-cream-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+          <div class="text-center mb-10">
+            <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-royal-espresso">Frequently Asked Questions</h2>
+            <p class="text-xs sm:text-sm text-neutral-600 mt-1 font-medium">Clear answers for our religious and holiday tour packages.</p>
+          </div>
+
+          <div class="space-y-3">
+            <details class="group bg-white p-5 rounded-xl border border-gold-300 shadow-sm cursor-pointer [&_summary::-webkit-details-marker]:hidden">
+              <summary class="flex justify-between items-center font-bold text-sm text-royal-espresso">
+                <span>Can we customize dates and combine multiple holy sites (e.g. Makkah + Egypt)?</span>
+                <span class="text-gold-600 transition-transform group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+              </summary>
+              <p class="mt-3 text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
+                Yes! Our Ziyarat specialists customize multi-destination itineraries. You can combine Umrah (Makkah & Madinah) with historic tours of Cairo/Alexandria, the shrines of Karbala & Najaf, or Jordan's historical landmarks.
+              </p>
+            </details>
+
+            <details class="group bg-white p-5 rounded-xl border border-gold-300 shadow-sm cursor-pointer [&_summary::-webkit-details-marker]:hidden">
+              <summary class="flex justify-between items-center font-bold text-sm text-royal-espresso">
+                <span>What is included in the Indian and International holiday packages?</span>
+                <span class="text-gold-600 transition-transform group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+              </summary>
+              <p class="mt-3 text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
+                All packages include verified 3, 4, or 5-star hotels, daily breakfasts, sanitized private/luxury coach transport, sightseeing entry tickets, and full support from our on-ground tour coordinator.
+              </p>
+            </details>
+
+            <details class="group bg-white p-5 rounded-xl border border-gold-300 shadow-sm cursor-pointer [&_summary::-webkit-details-marker]:hidden">
+              <summary class="flex justify-between items-center font-bold text-sm text-royal-espresso">
+                <span>What are the differences between Normal, Premium, and Pro VIP tiers?</span>
+                <span class="text-gold-600 transition-transform group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+              </summary>
+              <p class="mt-3 text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
+                <strong>Normal:</strong> Value-focused 3-Star comfort with shared AC coaches and basic tours. <strong>Premium:</strong> 4-Star/Near-center stays with full buffet meals and small-group tours. <strong>Pro VIP:</strong> 5-Star front-row suites, dedicated luxury private vehicles (GMC/Sedan), and personalized 24/7 private butlers.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- VIEW 2: DESTINATION DETAIL (PAGE 2 - NORMAL, PREMIUM, PRO TIERS)-->
+    <!-- ============================================================== -->
+    <div id="page-destination-detail" class="hidden transition-opacity duration-300 py-10 sm:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="flex items-center justify-between pb-6 mb-8 border-b-2 border-gold-300">
+          <button onclick="showPage('page-home')" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border-2 border-gold-400 text-royal-espresso text-xs sm:text-sm font-bold hover:bg-gold-500 hover:text-white transition shadow-sm">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Back to All Destinations</span>
+          </button>
+
+          <div class="text-right">
+            <span class="text-xs text-neutral-500 uppercase tracking-widest font-bold block" id="selectedCatLabel">Islamic Religious</span>
+            <span id="selectedDestinationTitle" class="font-cinzel text-xl sm:text-3xl font-extrabold text-gold-800">Makkah Al-Mukarramah</span>
+          </div>
+        </div>
+
+        <!-- Destination Spotlight Banner -->
+        <div class="p-6 rounded-3xl bg-white border-2 border-gold-400 shadow-md mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-2xl overflow-hidden border border-gold-500 shrink-0 shadow-inner">
+              <img id="detailLandmarkThumb" src="" alt="Landmark" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
+                <span class="text-xs font-bold text-neutral-700 uppercase tracking-wider" id="detailLandmarkHighlight">The Holy Kaaba & Clock Tower</span>
+              </div>
+              <h3 class="font-cinzel text-lg sm:text-xl font-bold text-royal-espresso">
+                Select Your Comfort Level for <span id="bannerDestSpan" class="text-gold-700">Makkah</span>
+              </h3>
+              <p class="text-xs text-neutral-600 mt-0.5 font-medium" id="detailDurationText">Duration: 15 Blessed Days | Complete Ground Assistance</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 shrink-0">
+            <button onclick="openEstimatorModal()" class="btn-gold-luxury px-6 py-3 rounded-full text-white text-xs font-bold tracking-wider uppercase shadow-md">
+              <i class="fa-solid fa-calculator mr-1"></i> Cost Calculator
+            </button>
+          </div>
+        </div>
+
+        <!-- 3 TIER CARDS: NORMAL (1), PREMIUM (2), PRO VIP (3) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+          
+          <!-- TIER 1: NORMAL -->
+          <div class="rounded-3xl bg-white border border-neutral-300 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 relative group">
+            <div class="absolute -top-3 left-6 px-3 py-1 bg-neutral-200 border border-neutral-400 rounded-full text-[10px] font-bold text-neutral-800 uppercase tracking-wider font-cinzel">
+              Tier 1 • Essential Comfort
+            </div>
+
+            <div>
+              <div class="flex justify-between items-start mt-2">
+                <div>
+                  <h3 class="font-cinzel text-2xl font-bold text-royal-espresso">Normal</h3>
+                  <p class="text-xs text-neutral-500 font-medium">Standard 3-Star accommodations</p>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-cream-200 flex items-center justify-center font-cinzel font-bold text-lg text-neutral-800">
+                  1
+                </div>
+              </div>
+
+              <div class="my-6 py-4 px-4 rounded-2xl bg-cream-100/70 border border-cream-300">
+                <span class="text-xs text-neutral-500 font-semibold block">Starting from</span>
+                <div class="flex items-baseline gap-1">
+                  <span class="font-cinzel text-3xl font-extrabold text-royal-espresso" id="normalTierPrice">₹78,500</span>
+                  <span class="text-xs text-neutral-600 font-medium">/ person</span>
+                </div>
+                <span class="text-[11px] text-green-700 font-bold block mt-1"><i class="fa-solid fa-tag"></i> Best value guaranteed</span>
+              </div>
+
+              <ul class="space-y-3.5 text-xs text-neutral-700 font-medium">
+                <li class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-check text-green-600 text-sm"></i>
+                  <span><strong>Hotels:</strong> Certified 3-Star Quality (800m - 1.2km)</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-check text-green-600 text-sm"></i>
+                  <span><strong>Transport:</strong> Free 24/7 AC Coach / Shared Van</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-check text-green-600 text-sm"></i>
+                  <span><strong>Meals:</strong> Daily Breakfast Buffet</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-check text-green-600 text-sm"></i>
+                  <span><strong>Sightseeing:</strong> Group Landmark Tour with Guide</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-check text-green-600 text-sm"></i>
+                  <span><strong>Assistance:</strong> Airport Meet & Greet Included</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-neutral-200">
+              <button onclick="bookTierDirect('Normal')" class="w-full py-3 rounded-xl border-2 border-royal-espresso text-royal-espresso hover:bg-royal-espresso hover:text-white transition font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                <span>Book Normal Tier</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- TIER 2: PREMIUM -->
+          <div class="rounded-3xl bg-white border-2 border-gold-500 p-6 sm:p-8 flex flex-col justify-between shadow-2xl relative transform md:-translate-y-3 transition-all duration-300">
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-gold-600 to-gold-400 text-white rounded-full text-[11px] font-bold uppercase tracking-widest font-cinzel shadow-md">
+              <i class="fa-solid fa-crown mr-1 text-gold-200"></i> Recommended Choice
+            </div>
+
+            <div>
+              <div class="flex justify-between items-start mt-2">
+                <div>
+                  <h3 class="font-cinzel text-2xl font-bold text-gold-800">Premium</h3>
+                  <p class="text-xs text-neutral-500 font-medium">Walking distance 4-Star & 5-Star</p>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-gold-500 text-white flex items-center justify-center font-cinzel font-bold text-lg shadow">
+                  2
+                </div>
+              </div>
+
+              <div class="my-6 py-4 px-4 rounded-2xl bg-gradient-to-r from-cream-100 to-gold-100/60 border border-gold-300">
+                <span class="text-xs text-gold-900 font-bold block">Starting from</span>
+                <div class="flex items-baseline gap-1">
+                  <span class="font-cinzel text-3xl font-extrabold text-royal-espresso" id="premiumTierPrice">₹1,05,000</span>
+                  <span class="text-xs text-neutral-600 font-medium">/ person</span>
+                </div>
+                <span class="text-[11px] text-gold-900 font-bold block mt-1"><i class="fa-solid fa-star"></i> Courtyard Proximity / City Center</span>
+              </div>
+
+              <ul class="space-y-3.5 text-xs text-neutral-700 font-medium">
+                <li class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-circle-check text-gold-600 text-sm"></i>
+                  <span><strong>Hotels:</strong> 4-Star/5-Star (200m - 400m from site)</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-circle-check text-gold-600 text-sm"></i>
+                  <span><strong>Dining:</strong> Full Board (Breakfast, Lunch & Dinner)</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-circle-check text-gold-600 text-sm"></i>
+                  <span><strong>Transfers:</strong> Direct Dedicated Luxury AC Coach</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-circle-check text-gold-600 text-sm"></i>
+                  <span><strong>Sightseeing:</strong> Comprehensive VIP Guided Excursions</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-circle-check text-gold-600 text-sm"></i>
+                  <span><strong>Complimentary:</strong> Laundry Service + Welcome Travel Kit</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-gold-200">
+              <button onclick="bookTierDirect('Premium')" class="btn-gold-luxury w-full py-3.5 rounded-xl text-white font-bold text-xs uppercase tracking-wider shadow-md flex items-center justify-center gap-2">
+                <span>Book Premium Deluxe</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- TIER 3: PRO VIP -->
+          <div class="rounded-3xl bg-royal-charcoal text-cream-100 border-2 border-gold-400 p-6 sm:p-8 flex flex-col justify-between shadow-2xl relative group">
+            <div class="absolute -top-3 right-6 px-3 py-1 bg-gold-500 text-royal-espresso rounded-full text-[10px] font-extrabold uppercase tracking-wider font-cinzel">
+              Royal VIP
+            </div>
+
+            <div>
+              <div class="flex justify-between items-start mt-2">
+                <div>
+                  <h3 class="font-cinzel text-2xl font-bold text-gold-300">Pro VIP</h3>
+                  <p class="text-xs text-cream-200/80 font-medium">Front-row suites & private luxury vehicle</p>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-gold-400 text-royal-espresso flex items-center justify-center font-cinzel font-bold text-lg">
+                  3
+                </div>
+              </div>
+
+              <div class="my-6 py-4 px-4 rounded-2xl bg-white/10 border border-gold-500/40">
+                <span class="text-xs text-gold-300 font-bold block">Starting from</span>
+                <div class="flex items-baseline gap-1">
+                  <span class="font-cinzel text-3xl font-extrabold text-gold-300" id="proTierPrice">₹1,65,000</span>
+                  <span class="text-xs text-cream-200/80 font-medium">/ person</span>
+                </div>
+                <span class="text-[11px] text-gold-400 font-bold block mt-1"><i class="fa-solid fa-gem"></i> Zero-Meter Landmark Views</span>
+              </div>
+
+              <ul class="space-y-3.5 text-xs text-cream-100 font-medium">
+                <li class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-gem text-gold-400 text-sm"></i>
+                  <span><strong>Suites:</strong> 5-Star Ultra Luxury Front-Row Suites</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-gem text-gold-400 text-sm"></i>
+                  <span><strong>Chauffeur:</strong> Private GMC Yukon / Luxury Mercedes</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-gem text-gold-400 text-sm"></i>
+                  <span><strong>Butler:</strong> Dedicated 24/7 Personal Tour Butler</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-gem text-gold-400 text-sm"></i>
+                  <span><strong>Dining:</strong> 5-Star Chef's Buffet & Fine Dining</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-gem text-gold-400 text-sm"></i>
+                  <span><strong>Fast Track:</strong> VIP Airport Lounge & Priority Fast Track</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-gold-500/40">
+              <button onclick="bookTierDirect('Pro VIP')" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold-400 via-gold-300 to-gold-500 text-royal-espresso hover:brightness-110 transition font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg">
+                <span>Book Pro VIP Tier</span>
+                <i class="fa-solid fa-crown text-xs"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-14 text-center">
+          <p class="text-xs text-neutral-600 font-medium">Require custom dates, extended days, or family suite bookings?</p>
+          <button onclick="openWhatsAppChat('Assalamu Alaikum, I need custom pricing and room allocations for ' + currentDestinationSelected.name + '.')" class="inline-flex items-center gap-2 text-xs font-bold text-gold-800 hover:text-gold-900 underline mt-1.5">
+            <i class="fa-brands fa-whatsapp text-green-600 text-base"></i> Chat with our Head Coordinator on WhatsApp
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= CONTACT SECTION ================= -->
+    <section id="contact-section" class="py-16 bg-cream-200/50 border-t border-gold-300/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          
+          <div>
+            <span class="text-gold-800 font-cinzel text-xs font-bold tracking-widest uppercase">Direct Assistance</span>
+            <h2 class="font-cinzel text-2xl sm:text-4xl font-extrabold text-royal-espresso mt-1 mb-4">
+              Connect With Our Travel Specialists
+            </h2>
+            <p class="text-neutral-700 text-sm leading-relaxed mb-6 font-medium">
+              We coordinate visas, flights, 5-star hotel allotments, and private ground handling for your pilgrimage or holiday.
+            </p>
+
+            <div class="space-y-4 text-sm font-medium">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gold-500/15 border border-gold-400 text-gold-800 flex items-center justify-center">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <span class="font-bold text-royal-espresso block">Head Office:</span>
+                  <span class="text-neutral-600 text-xs">Makki Madani Complex, Main Road, City Center, India</span>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gold-500/15 border border-gold-400 text-gold-800 flex items-center justify-center">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                  <span class="font-bold text-royal-espresso block">Hotline & WhatsApp:</span>
+                  <span class="text-neutral-600 text-xs">+91 98765 43210 / +91 91234 56789</span>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gold-500/15 border border-gold-400 text-gold-800 flex items-center justify-center">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                  <span class="font-bold text-royal-espresso block">Email:</span>
+                  <span class="text-neutral-600 text-xs">reservations@makkimadanitours.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Consultation Form -->
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-gold-300 shadow-lg">
+            <h3 class="font-cinzel text-lg font-bold text-royal-espresso mb-4">Instant Consultation Request</h3>
+            <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold text-neutral-700 mb-1">Full Name</label>
+                <input type="text" required placeholder="Guest / Pilgrim Name" class="w-full px-4 py-2.5 rounded-xl border border-neutral-300 text-sm focus:border-gold-500 focus:outline-none bg-cream-50 font-medium">
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-neutral-700 mb-1">WhatsApp Number</label>
+                  <input type="tel" required placeholder="+91 98765..." class="w-full px-4 py-2.5 rounded-xl border border-neutral-300 text-sm focus:border-gold-500 focus:outline-none bg-cream-50 font-medium">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-neutral-700 mb-1">Destination Category</label>
+                  <select class="w-full px-4 py-2.5 rounded-xl border border-neutral-300 text-sm focus:border-gold-500 focus:outline-none bg-cream-50 font-medium">
+                    <option>Islamic Religious (Makkah, Madinah, Karbala...)</option>
+                    <option>Incredible India (Kashmir, Kerala, Goa...)</option>
+                    <option>International (Dubai, Singapore Cruise...)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-neutral-700 mb-1">Preferred Comfort Tier</label>
+                <div class="grid grid-cols-3 gap-2">
+                  <label class="border border-neutral-200 rounded-lg p-2 text-center text-xs font-semibold cursor-pointer hover:border-gold-500 flex items-center justify-center gap-1">
+                    <input type="radio" name="formTier" value="Normal" checked> Normal
+                  </label>
+                  <label class="border border-neutral-200 rounded-lg p-2 text-center text-xs font-semibold cursor-pointer hover:border-gold-500 flex items-center justify-center gap-1">
+                    <input type="radio" name="formTier" value="Premium"> Premium
+                  </label>
+                  <label class="border border-neutral-200 rounded-lg p-2 text-center text-xs font-semibold cursor-pointer hover:border-gold-500 flex items-center justify-center gap-1">
+                    <input type="radio" name="formTier" value="Pro"> Pro VIP
+                  </label>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-gold-luxury w-full py-3.5 rounded-xl text-white font-bold text-xs uppercase tracking-wider shadow-md">
+                Submit Consultation Request
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= LUXURY FOOTER ================= -->
+  <footer class="bg-royal-charcoal text-cream-100 border-t-2 border-gold-500 pt-12 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-white/10">
+        
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <!-- Exact Logo Emblem in Footer -->
+            <div class="w-10 h-10 rounded-full bg-cream-50 p-0.5 border border-gold-400 overflow-hidden shrink-0">
+              <svg viewBox="0 0 200 200" class="w-full h-full">
+                <circle cx="100" cy="100" r="96" fill="#FDFCF7" stroke="#D4AF37" stroke-width="4"/>
+                <path d="M 68 34 A 65 65 0 1 0 154 144 A 55 55 0 1 1 68 34 Z" fill="#D4AF37"/>
+                <path d="M 88 58 Q 100 30 112 58 Z" fill="#D4AF37"/>
+                <polygon points="80,72 100,60 120,72 100,84" fill="#3D2D0C"/>
+                <polygon points="80,72 100,84 100,122 80,108" fill="#281D05"/>
+                <polygon points="100,84 120,72 120,108 100,122" fill="#4E3B12"/>
+                <polygon points="80,78 100,90 100,94 80,82" fill="#D4AF37"/>
+                <polygon points="100,90 120,78 120,82 100,94" fill="#D4AF37"/>
+                <rect x="105" y="93" width="7" height="15" fill="#D4AF37"/>
+                <path d="M 78 118 L 88 88 L 100 110 L 112 88 L 122 118 L 114 118 L 107 98 L 100 114 L 93 98 L 86 118 Z" fill="#D4AF37"/>
+                <polygon points="135,92 138,98 145,99 140,104 141,111 135,107 129,111 130,104 125,99 132,98" fill="#D4AF37"/>
+              </svg>
+            </div>
+            <span class="font-cinzel text-lg font-bold text-white tracking-wider">Makki Madani</span>
+          </div>
+          <p class="text-xs text-cream-200/80 leading-relaxed font-normal">
+            Your faithful global companion for sacred pilgrimages and luxurious global vacations.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-cinzel text-sm font-bold text-gold-400 mb-3">Religious Packages</h4>
+          <ul class="space-y-2 text-xs text-cream-200/80 font-medium">
+            <li><a href="javascript:void(0)" onclick="selectDestinationById('makkah')" class="hover:text-gold-300">Makkah Al-Mukarramah</a></li>
+            <li><a href="javascript:void(0)" onclick="selectDestinationById('madinah')" class="hover:text-gold-300">Madinah Al-Munawwarah</a></li>
+            <li><a href="javascript:void(0)" onclick="selectDestinationById('karbala')" class="hover:text-gold-300">Karbala Al-Muqaddasa</a></li>
+            <li><a href="javascript:void(0)" onclick="selectDestinationById('najaf')" class="hover:text-gold-300">Najaf Al-Ashraf</a></li>
+            <li><a href="javascript:void(0)" onclick="selectDestinationById('egypt')" class="hover:text-gold-300">Misr (Egypt) & Jordan</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-cinzel text-sm font-bold text-gold-400 mb-3">India & International</h4>
+          <ul class="space-y-2 text-xs text-cream-200/80 font-medium">
+            <li><a href="javascript:void(0)" onclick="selectDestinationById('kashmir')" class="hover:text-gold-300">Kashmir Snow Paradise</a></li>
+            <li><a href="javascript:void(0)" onclick="selectDestinationById('kerala')" class="hover:text-gold-300">Kerala Houseboat Luxury</a></li>
+            <li><a href="javascript:void(0)" onclick="selectDestinationById('dubai')" class="hover:text-gold-300">Dubai Burj Skyline</a></li>
+            <li><a href="javascript:void(0)" onclick="selectDestinationById('singapore')" class="hover:text-gold-300">Singapore Luxury Cruise</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-cinzel text-sm font-bold text-gold-400 mb-3">Guaranteed Excellence</h4>
+          <p class="text-xs text-cream-200/80 mb-3 font-normal leading-relaxed">
+            Every booking is backed by transparent itineraries, official vouchers, and dedicated 24/7 personal tour managers.
+          </p>
+          <div class="flex gap-3 text-gold-400">
+            <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold-500 hover:text-royal-charcoal transition"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold-500 hover:text-royal-charcoal transition"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold-500 hover:text-royal-charcoal transition"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-cream-200/70 gap-3">
+        <p>© 2026 Makki Madani Tours and Travels. All rights reserved.</p>
+        <p class="text-gold-400 font-semibold">Government Authorized Travel & Tour Facilitators</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= FLOATING WHATSAPP CTA ================= -->
+  <aside aria-label="Quick WhatsApp Support" class="fixed bottom-6 right-6 z-40 flex items-center">
+    <button onclick="openWhatsAppChat('Assalamu Alaikum, I would like to inquire about Makki Madani travel packages.')" class="relative group flex items-center gap-2 p-3.5 bg-green-600 hover:bg-green-700 text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-105">
+      <span class="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-300 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-green-400"></span>
+      </span>
+      <i class="fa-brands fa-whatsapp text-2xl"></i>
+      <span class="hidden md:inline font-bold text-xs pr-1">WhatsApp Us</span>
+    </button>
+  </aside>
+
+  <!-- ================= VIDEO TESTIMONIAL PLAYER MODAL ================= -->
+  <div id="videoModal" class="fixed inset-0 z-50 bg-royal-charcoal/90 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="relative w-full max-w-3xl bg-royal-charcoal rounded-3xl border-2 border-gold-500 shadow-2xl overflow-hidden">
+      
+      <button onclick="closeVideoPlayer()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/60 text-white hover:text-gold-400 flex items-center justify-center font-bold text-base transition">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- Simulated Realistic Player Screen -->
+      <div class="relative w-full h-72 sm:h-96 bg-black flex items-center justify-center overflow-hidden">
+        <img id="videoPlayerPoster" src="" alt="Video Poster" class="w-full h-full object-cover opacity-60">
+        
+        <!-- Live Play Animation State -->
+        <div id="videoPlayingState" class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 text-center p-6">
+          <div class="w-16 h-16 rounded-full border-2 border-gold-400 bg-gold-500 text-royal-charcoal flex items-center justify-center text-2xl mb-4 animate-pulse">
+            <i class="fa-solid fa-play pl-1"></i>
+          </div>
+          <span class="text-xs font-cinzel text-gold-300 tracking-widest uppercase font-bold">Pilgrim Experience Recording</span>
+          <h4 id="videoPlayerTitle" class="font-cinzel text-xl sm:text-2xl font-bold text-white mt-1">Haji Farooq Ahmad & Family</h4>
+          <p id="videoPlayerSubtitle" class="text-xs text-cream-200 mt-1 max-w-lg">Makkah Clock Tower Suite feedback & smooth Ziyarat</p>
+        </div>
+
+        <!-- Fake Player Controls Bar -->
+        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/80 to-transparent p-4 flex items-center justify-between text-xs text-white">
+          <div class="flex items-center gap-3">
+            <button class="text-gold-400 hover:text-white"><i class="fa-solid fa-pause"></i></button>
+            <div class="w-32 sm:w-64 h-1.5 rounded-full bg-white/30 overflow-hidden">
+              <div class="w-2/3 h-full bg-gold-400"></div>
+            </div>
+            <span id="videoPlayerDuration" class="text-[11px] font-mono text-neutral-300">01:45 / 04:18</span>
+          </div>
+          <div class="flex items-center gap-3 text-neutral-300">
+            <span id="videoPlayerOrigin" class="hidden sm:inline text-gold-300 text-xs">Delhi, India</span>
+            <i class="fa-solid fa-volume-high"></i>
+            <i class="fa-solid fa-expand"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Details Bottom Banner -->
+      <div class="p-5 bg-royal-espresso text-cream-100 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-gold-600/40">
+        <div>
+          <span class="text-[11px] text-green-400 font-bold uppercase"><i class="fa-solid fa-shield-halved"></i> 100% Genuine Verified Pilgrim Review</span>
+          <p class="text-xs text-neutral-300 mt-0.5">Recorded live during the blessed batch departure.</p>
+        </div>
+        <button onclick="openWhatsAppChat('Assalamu Alaikum, I just watched the video testimonial of ' + document.getElementById('videoPlayerTitle').innerText + '. Please share similar package options.')" class="btn-gold-luxury px-5 py-2.5 rounded-xl text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>Inquire About This Tour</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= PHOTO LIGHTBOX MODAL ================= -->
+  <div id="photoLightboxModal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden items-center justify-center p-4">
+    <button onclick="closePhotoLightbox()" class="absolute top-5 right-5 z-20 w-11 h-11 rounded-full bg-white/20 text-white hover:text-gold-400 flex items-center justify-center text-lg transition">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="relative max-w-4xl max-h-[90vh] flex flex-col items-center">
+      <img id="lightboxImage" src="" alt="Enlarged Memory" class="max-w-full max-h-[75vh] object-contain rounded-xl border border-gold-400/80 shadow-2xl">
+      <div class="mt-4 text-center text-white">
+        <h4 id="lightboxCaption" class="font-cinzel text-lg font-bold text-gold-300">Group Photo at Masjid al-Haram</h4>
+        <p id="lightboxSub" class="text-xs text-cream-200 mt-0.5">Makkah Al-Mukarramah • Batch 2026</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SHARE REVIEW & STORY MODAL ================= -->
+  <div id="submitReviewModal" class="fixed inset-0 z-50 bg-royal-charcoal/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="relative w-full max-w-lg bg-cream-50 rounded-3xl border-2 border-gold-500 shadow-2xl p-6 sm:p-8 overflow-hidden">
+      
+      <button onclick="closeReviewSubmitModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-cream-200 text-neutral-700 hover:text-royal-charcoal flex items-center justify-center font-bold">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="text-center mb-6">
+        <span class="text-gold-800 font-cinzel text-xs font-bold tracking-widest uppercase">Pilgrim & Traveler Voice</span>
+        <h3 class="font-cinzel text-xl font-bold text-royal-espresso">Share Your Journey Story</h3>
+        <p class="text-xs text-neutral-600 mt-1 font-medium">Your feedback inspires thousands of upcoming pilgrims and travelers.</p>
+      </div>
+
+      <form onsubmit="handleReviewSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-neutral-700 mb-1">Your Full Name</label>
+          <input type="text" id="reviewAuthorName" required placeholder="Haji / Traveler Name" class="w-full px-3.5 py-2.5 rounded-xl border border-neutral-300 text-xs bg-white font-medium focus:border-gold-500 focus:outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-neutral-700 mb-1">Your City / State</label>
+            <input type="text" id="reviewAuthorCity" required placeholder="e.g. Lucknow, UP" class="w-full px-3.5 py-2.5 rounded-xl border border-neutral-300 text-xs bg-white font-medium focus:border-gold-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-neutral-700 mb-1">Tour Completed</label>
+            <select id="reviewTourCategory" class="w-full px-3.5 py-2.5 rounded-xl border border-neutral-300 text-xs bg-white font-medium focus:border-gold-500 focus:outline-none">
+              <option>Umrah Package (Makkah & Madinah)</option>
+              <option>Karbala & Najaf Ziyarat</option>
+              <option>Kashmir / India Tour</option>
+              <option>Dubai / International Holiday</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-neutral-700 mb-1">Your Experience Rating</label>
+          <div class="flex items-center gap-2 text-gold-500 text-lg">
+            <i class="fa-solid fa-star cursor-pointer"></i>
+            <i class="fa-solid fa-star cursor-pointer"></i>
+            <i class="fa-solid fa-star cursor-pointer"></i>
+            <i class="fa-solid fa-star cursor-pointer"></i>
+            <i class="fa-solid fa-star cursor-pointer"></i>
+            <span class="text-xs text-neutral-600 font-bold ml-2">5.0 Star Excellent</span>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-neutral-700 mb-1">Your Honest Review / Experience</label>
+          <textarea id="reviewStoryText" rows="3" required placeholder="Tell us about the hotel comfort, food, guide support, and overall blessings..." class="w-full px-3.5 py-2.5 rounded-xl border border-neutral-300 text-xs bg-white font-medium focus:border-gold-500 focus:outline-none"></textarea>
+        </div>
+
+        <button type="submit" class="btn-gold-luxury w-full py-3 rounded-xl text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md">
+          <i class="fa-solid fa-paper-plane text-xs"></i>
+          <span>Publish My Review</span>
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- ================= COST ESTIMATOR MODAL ================= -->
+  <div id="costModal" class="fixed inset-0 z-50 bg-royal-charcoal/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="relative w-full max-w-lg bg-cream-50 rounded-3xl border-2 border-gold-500 shadow-2xl p-6 sm:p-8 overflow-hidden">
+      
+      <button onclick="closeEstimatorModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-cream-200 text-neutral-700 hover:text-royal-charcoal flex items-center justify-center font-bold">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="text-center mb-6">
+        <span class="text-gold-800 font-cinzel text-xs font-bold tracking-widest uppercase">Instant Calculator</span>
+        <h3 class="font-cinzel text-xl font-bold text-royal-espresso">Trip Cost Estimator</h3>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-neutral-700 mb-1">Select Destination</label>
+          <select id="calcDestinationSelect" onchange="calculateEstimate()" class="w-full px-3 py-2 rounded-xl border border-neutral-300 text-xs bg-white font-medium">
+            <!-- Populated via JS -->
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-neutral-700 mb-1">Select Package Tier</label>
+          <select id="calcTier" onchange="calculateEstimate()" class="w-full px-3 py-2 rounded-xl border border-neutral-300 text-xs bg-white font-medium">
+            <option value="normal">Tier 1: Normal (Essential Comfort / 3-Star)</option>
+            <option value="premium" selected>Tier 2: Premium (Deluxe / 4-Star Proximity)</option>
+            <option value="pro">Tier 3: Pro VIP (Executive 5-Star / Private Chauffeur)</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-neutral-700 mb-1">No. of Guests</label>
+            <input type="number" id="calcPilgrims" value="2" min="1" max="50" onchange="calculateEstimate()" class="w-full px-3 py-2 rounded-xl border border-neutral-300 text-xs bg-white font-medium">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-neutral-700 mb-1">Room Occupancy</label>
+            <select id="calcSharing" onchange="calculateEstimate()" class="w-full px-3 py-2 rounded-xl border border-neutral-300 text-xs bg-white font-medium">
+              <option value="1">Quad Sharing (4 Bed)</option>
+              <option value="1.15">Triple Sharing (3 Bed)</option>
+              <option value="1.3">Double / Couple Sharing</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-gradient-to-r from-cream-100 to-gold-100 border-2 border-gold-300 text-center my-4">
+          <span class="text-xs text-neutral-600 font-bold block">Total Estimated Package Cost</span>
+          <span id="calculatedTotalDisplay" class="font-cinzel text-3xl font-extrabold text-royal-espresso">₹2,10,000</span>
+          <span class="text-[10px] text-neutral-500 font-medium block mt-0.5">*Includes accommodations, guided tour, transfers & meals</span>
+        </div>
+
+        <button onclick="bookCalculatedPackage()" class="btn-gold-luxury w-full py-3 rounded-xl text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>Lock This Estimate on WhatsApp</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div id="toastNotification" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 bg-royal-charcoal text-cream-100 border-2 border-gold-400 px-6 py-3 rounded-full shadow-2xl text-xs font-bold hidden items-center gap-2">
+    <i class="fa-solid fa-circle-check text-green-400"></i>
+    <span id="toastMessage">Your consultation request has been submitted!</span>
+  </div>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // ===============================================================
+    // COMPLETE DESTINATIONS DATASET (3 CATEGORIES)
+    // ===============================================================
+    const packagesDatabase = {
+      islamic: [
+        {
+          id: 'makkah',
+          name: 'Makkah Al-Mukarramah',
+          region: 'Kingdom of Saudi Arabia',
+          badge: 'Holy Kaaba',
+          icon: 'fa-kaaba',
+          duration: '15 Days Pilgrimage',
+          normal: 78500,
+          premium: 105000,
+          pro: 165000,
+          desc: 'The center of Islamic faith; perform blessed Tawaf around the Holy Kaaba and visit Jabal an-Nour.',
+          landmark: 'The Holy Kaaba & Clock Tower',
+          image: 'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'madinah',
+          name: 'Madinah Al-Munawwarah',
+          region: 'Kingdom of Saudi Arabia',
+          badge: 'The Green Dome',
+          icon: 'fa-mosque',
+          duration: 'Combined Umrah Tour',
+          normal: 79000,
+          premium: 106000,
+          pro: 168000,
+          desc: 'Offer heart-touching Salam at Rawdah Mubarak and pray in the tranquil courtyards of the Prophet’s Mosque.',
+          landmark: 'Al-Masjid an-Nabawi & Rawdah',
+          image: 'https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'karbala',
+          name: 'Karbala Al-Muqaddasa',
+          region: 'Republic of Iraq',
+          badge: 'Golden Sanctuary',
+          icon: 'fa-moon',
+          duration: '10 Days Holy Ziyarat',
+          normal: 85000,
+          premium: 115000,
+          pro: 175000,
+          desc: 'Sacred shrine of Imam Husayn (A.S) & Hazrat Abbas (A.S); golden domes, Bayn al-Haramayn, and peaceful ziyarat.',
+          landmark: 'Imam Husayn & Hazrat Abbas Shrine',
+          image: 'https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'najaf',
+          name: 'Najaf Al-Ashraf',
+          region: 'Republic of Iraq',
+          badge: 'Golden Dome',
+          icon: 'fa-shield-halved',
+          duration: 'Combined Iraq Ziyarat',
+          normal: 82000,
+          premium: 110000,
+          pro: 170000,
+          desc: 'The luminous shrine of Imam Ali (A.S), the historic Kufa Mosque, and the sacred valley of Wadi-us-Salaam.',
+          landmark: 'Imam Ali Shrine & Kufa Mosque',
+          image: 'https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'egypt',
+          name: 'Misr (Cairo & Alexandria)',
+          region: 'Arab Republic of Egypt',
+          badge: 'Al-Azhar & Pyramids',
+          icon: 'fa-landmark',
+          duration: '8 Days Cultural Tour',
+          normal: 89000,
+          premium: 122000,
+          pro: 185000,
+          desc: 'Centuries of Islamic heritage: historic Al-Azhar, Imam Shafi’i & Sayyida Nafisa shrines, alongside the ancient Pyramids of Giza.',
+          landmark: 'Al-Azhar & Pyramids of Giza',
+          image: 'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'palestine',
+          name: 'Palestine (Jerusalem)',
+          region: 'Holy Land Sanctuary',
+          badge: 'Third Holiest Site',
+          icon: 'fa-star-and-crescent',
+          duration: '7 Days Sacred Ziyarat',
+          normal: 99000,
+          premium: 135000,
+          pro: 210000,
+          desc: 'Al-Aqsa Sanctuary, the Golden Dome of the Rock, Mount of Olives, and historic sites of revered prophets.',
+          landmark: 'Al-Aqsa Mosque & Dome of the Rock',
+          image: 'https://images.unsplash.com/photo-1544967082-d9d25d867d66?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'jordan',
+          name: 'Jordan (Amman & Petra)',
+          region: 'Hashemite Kingdom of Jordan',
+          badge: 'Petra & Seven Sleepers',
+          icon: 'fa-monument',
+          duration: '7 Days Biblical & Islamic Tour',
+          normal: 92000,
+          premium: 126000,
+          pro: 195000,
+          desc: 'The rock-cut city of Petra (Al-Khazneh), the blessed Cave of the Seven Sleepers (Kahf), and Mount Nebo vistas.',
+          landmark: 'Petra Al-Khazneh & Cave Kahf',
+          image: 'https://images.unsplash.com/photo-1501232060322-be8347a25f72?auto=format&fit=crop&w=800&q=80'
+        }
+      ],
+      indian: [
+        {
+          id: 'kashmir',
+          name: 'Kashmir Paradise',
+          region: 'Jammu & Kashmir, India',
+          badge: 'Dal Lake & Gulmarg',
+          icon: 'fa-snowflake',
+          duration: '6 Days / 5 Nights',
+          normal: 24500,
+          premium: 38500,
+          pro: 65000,
+          desc: 'Heaven on Earth: Royal Shikara rides across Dal Lake, Mughal Gardens, and snow peaks in Gulmarg & Pahalgam.',
+          landmark: 'Dal Lake Shikara & Snow Glaciers',
+          image: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'kerala',
+          name: 'Kerala God’s Own Country',
+          region: 'South India',
+          badge: 'Luxury Houseboat',
+          icon: 'fa-water',
+          duration: '6 Days / 5 Nights',
+          normal: 26000,
+          premium: 41000,
+          pro: 68000,
+          desc: 'Serene Alleppey backwater houseboats, emerald green tea estates in Munnar, and spices of Thekkady.',
+          landmark: 'Alleppey Backwaters & Munnar Hills',
+          image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'manali',
+          name: 'Manali Snow Valley',
+          region: 'Himachal Pradesh, India',
+          badge: 'Solang & Rohtang Pass',
+          icon: 'fa-mountain',
+          duration: '5 Days / 4 Nights',
+          normal: 18500,
+          premium: 29500,
+          pro: 48000,
+          desc: 'Snow adventures at Solang Valley, Rohtang Pass, apple orchards, and the tranquil Hadimba temple forest.',
+          landmark: 'Solang Valley & Himalayan Vistas',
+          image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'shimla',
+          name: 'Shimla Queen of Hills',
+          region: 'Himachal Pradesh, India',
+          badge: 'The Ridge & Mall Road',
+          icon: 'fa-tree',
+          duration: '4 Days / 3 Nights',
+          normal: 16500,
+          premium: 26500,
+          pro: 44000,
+          desc: 'Colonial heritage on The Ridge, Christ Church, toy train panoramas, and pine-clad hills of Kufri.',
+          landmark: 'The Ridge & Christ Church',
+          image: 'https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'ladakh',
+          name: 'Ladakh High Passes',
+          region: 'Trans-Himalayas, India',
+          badge: 'Pangong Lake & Khardung La',
+          icon: 'fa-road',
+          duration: '7 Days / 6 Nights',
+          normal: 34000,
+          premium: 52000,
+          pro: 82000,
+          desc: 'Crystal azure waters of Pangong Lake, double-humped camels in Nubra Valley, and world’s highest motorable pass.',
+          landmark: 'Pangong Tso & Thiksey Monastery',
+          image: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'ajmer',
+          name: 'Ajmer Sharif Pilgrimage',
+          region: 'Rajasthan, India',
+          badge: 'Dargah Khwaja Gharib Nawaz',
+          icon: 'fa-hands-praying',
+          duration: '3 Days / 2 Nights',
+          normal: 12500,
+          premium: 21000,
+          pro: 35000,
+          desc: 'Spiritual prayers at the blessed shrine of Hazrat Khwaja Moinuddin Chishti (R.A) and tranquil Ana Sagar Lake.',
+          landmark: 'Ajmer Sharif Dargah & Ana Sagar',
+          image: 'https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'goa',
+          name: 'Goa Coastal Luxury',
+          region: 'West Coast, India',
+          badge: 'Golden Beaches & Cruises',
+          icon: 'fa-umbrella-beach',
+          duration: '4 Days / 3 Nights',
+          normal: 19500,
+          premium: 32000,
+          pro: 54000,
+          desc: 'Pristine sun-kissed beaches, luxury sunset river cruises on the Mandovi, and Portuguese architectural heritage.',
+          landmark: 'Calangute Beach & Sunset Cruises',
+          image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'agra',
+          name: 'Agra City of Taj',
+          region: 'Uttar Pradesh, India',
+          badge: 'Taj Mahal Marble Wonder',
+          icon: 'fa-gem',
+          duration: '2 Days / 1 Night',
+          normal: 11000,
+          premium: 18500,
+          pro: 32000,
+          desc: 'Witness the timeless marble beauty of the Taj Mahal, Agra Fort, and Fatehpur Sikri royal architecture.',
+          landmark: 'The Taj Mahal & Agra Fort',
+          image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'hyderabad',
+          name: 'Hyderabad Nizam Heritage',
+          region: 'Telangana, India',
+          badge: 'Charminar & Golconda',
+          icon: 'fa-archway',
+          duration: '3 Days / 2 Nights',
+          normal: 14500,
+          premium: 24000,
+          pro: 39000,
+          desc: 'The majestic Charminar arches, historic Golconda Fort acoustics, and authentic world-famous Hyderabadi Dum Biryani.',
+          landmark: 'Charminar & Falaknuma Palace',
+          image: 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'mumbai',
+          name: 'Mumbai Maximum City',
+          region: 'Maharashtra, India',
+          badge: 'Gateway of India',
+          icon: 'fa-city',
+          duration: '3 Days / 2 Nights',
+          normal: 15500,
+          premium: 25500,
+          pro: 42000,
+          desc: 'The historic Gateway of India, glittering Marine Drive Queens Necklace, and Haji Ali Dargah in the Arabian Sea.',
+          landmark: 'Gateway of India & Marine Drive',
+          image: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'kullu',
+          name: 'Kullu Valley',
+          region: 'Himachal Pradesh, India',
+          badge: 'Beas River & Valleys',
+          icon: 'fa-campground',
+          duration: '4 Days / 3 Nights',
+          normal: 17500,
+          premium: 27500,
+          pro: 45000,
+          desc: 'River rafting on the roaring Beas, traditional wooden temples, and peaceful pine trails in the valley of Gods.',
+          landmark: 'Beas River & Pine Forest Valleys',
+          image: 'https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?auto=format&fit=crop&w=800&q=80'
+        }
+      ],
+      international: [
+        {
+          id: 'dubai',
+          name: 'Dubai Future Metropolis',
+          region: 'United Arab Emirates',
+          badge: 'Burj Khalifa & Desert Safari',
+          icon: 'fa-building',
+          duration: '5 Days / 4 Nights',
+          normal: 58000,
+          premium: 85000,
+          pro: 145000,
+          desc: 'Stand atop Burj Khalifa, experience thrill desert dune bashing with BBQ dinner, and visit the Museum of the Future.',
+          landmark: 'Burj Khalifa & Marina Skyline',
+          image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'saudi',
+          name: 'Saudi Arabia Tourism',
+          region: 'Riyadh & Al-Ula',
+          badge: 'Kingdom Tower & Hegra',
+          icon: 'fa-landmark-flag',
+          duration: '6 Days / 5 Nights',
+          normal: 72000,
+          premium: 108000,
+          pro: 175000,
+          desc: 'Discover cutting-edge Riyadh Kingdom Centre and the world wonder tombs of Hegra carved in golden desert rocks at Al-Ula.',
+          landmark: 'Al-Ula Hegra & Kingdom Tower',
+          image: 'https://images.unsplash.com/photo-1584810359583-96fc3448beaa?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'singapore',
+          name: 'Singapore Luxury Cruise',
+          region: 'Southeast Asia by Ship',
+          badge: 'Marina Bay & Cruise Liner',
+          icon: 'fa-ship',
+          duration: '6 Days / 5 Nights',
+          normal: 75000,
+          premium: 112000,
+          pro: 185000,
+          desc: 'Sail on a world-class luxury ocean liner, combined with Marina Bay Sands, Gardens by the Bay, and Sentosa Island.',
+          landmark: 'Marina Bay Sands & Ocean Cruise',
+          image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'bangkok',
+          name: 'Bangkok City of Angels',
+          region: 'Kingdom of Thailand',
+          badge: 'Wat Arun & Grand Palace',
+          icon: 'fa-gopuram',
+          duration: '5 Days / 4 Nights',
+          normal: 44000,
+          premium: 68000,
+          pro: 110000,
+          desc: 'Majestic Wat Arun Dawn Temple on Chao Phraya river, vibrant floating markets, and luxury night dinners on river cruises.',
+          landmark: 'Wat Arun & The Grand Palace',
+          image: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'vietnam',
+          name: 'Vietnam Emerald Bays',
+          region: 'Southeast Asia',
+          badge: 'Ha Long Bay & Golden Bridge',
+          icon: 'fa-bridge-water',
+          duration: '6 Days / 5 Nights',
+          normal: 52000,
+          premium: 79000,
+          pro: 128000,
+          desc: 'Cruise through UNESCO Ha Long Bay’s thousands of limestone islands and walk the giant hands of Ba Na Hills Golden Bridge.',
+          landmark: 'Ha Long Bay & Golden Hand Bridge',
+          image: 'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'thailand',
+          name: 'Thailand Tropical Islands',
+          region: 'Phuket & Phi Phi Islands',
+          badge: 'Phi Phi & James Bond Island',
+          icon: 'fa-water',
+          duration: '6 Days / 5 Nights',
+          normal: 48000,
+          premium: 74000,
+          pro: 120000,
+          desc: 'Crystal turquoise waters of Maya Bay, limestone sea cliffs of James Bond Island, and world-class island beach resorts.',
+          landmark: 'Phi Phi Islands & Maya Bay',
+          image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80'
+        }
+      ]
+    };
+
+    // ===============================================================
+    // CUSTOMER TRUST: PHOTOS & REVIEWS DATASET
+    // ===============================================================
+    const galleryPhotosData = [
+      {
+        tag: 'makkah',
+        caption: 'Haji Batch in Front of Holy Kaaba',
+        sub: 'Tawaf Al-Umrah • Batch 2026',
+        src: 'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        tag: 'madinah',
+        caption: 'Salam at Rawdah Mubarak Courtyard',
+        sub: 'Al-Masjid an-Nabawi Umbrella Plaza',
+        src: 'https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        tag: 'ziyarat',
+        caption: 'Shrine of Imam Husayn (A.S)',
+        sub: 'Karbala Golden Minarets • Iraq Ziyarat',
+        src: 'https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        tag: 'makkah',
+        caption: 'Spiritual Sunset from Jabal Al-Noor',
+        sub: 'Cave Hira Guided Pilgrimage Expedition',
+        src: 'https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        tag: 'tours',
+        caption: 'Family Shikara Ride on Dal Lake',
+        sub: 'Srinagar, Kashmir Luxury Winter Batch',
+        src: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        tag: 'tours',
+        caption: 'Sunset Luxury Desert Safari Dubai',
+        sub: 'Private 4x4 Dune Handling with Barbecue Dinner',
+        src: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        tag: 'ziyarat',
+        caption: 'Dome of the Rock & Al-Aqsa Courtyard',
+        sub: 'Jerusalem Historic Islamic Sanctuary',
+        src: 'https://images.unsplash.com/photo-1544967082-d9d25d867d66?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        tag: 'tours',
+        caption: 'Alleppey Traditional Houseboat Stay',
+        sub: 'Kerala Backwaters Authentic Ayurvedic Tour',
+        src: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80'
+      }
+    ];
+
+    const customerReviewsData = [
+      {
+        author: 'Haji Mohammad Rizwan & Family',
+        city: 'Lucknow, Uttar Pradesh',
+        tour: 'Umrah Pro VIP Tier',
+        rating: 5,
+        date: 'October 2026',
+        story: 'Alhamdulillah, Makki Madani Tours delivered every promise. Our Clock Tower suite had an uninterrupted view of the Kaaba, our meals were fresh Indian buffets, and the wheelchair assistance for my mother was arranged immediately at Jeddah airport.'
+      },
+      {
+        author: 'Zeenat Parveen & Tariq Anwer',
+        city: 'Bangalore, Karnataka',
+        tour: 'Karbala & Najaf Guided Ziyarat',
+        rating: 5,
+        date: 'September 2026',
+        story: 'The scholars and guides who accompanied our Iraq batch were deeply knowledgeable. The visa stamping and security checkpoints were smooth. We felt truly honored and safe at every sacred shrine.'
+      },
+      {
+        author: 'Ashfaq Khan & Friends',
+        city: 'Jaipur, Rajasthan',
+        tour: 'Kashmir Deluxe 6D/5N',
+        rating: 5,
+        date: 'October 2026',
+        story: 'Superb coordination by Makki Madani Travels! The houseboat on Dal Lake was heated and luxurious, the driver was courteous, and we experienced breathtaking fresh snowfall at Gulmarg without any itinerary delay.'
+      }
+    ];
+
+    // State Variables
+    let currentCategory = 'islamic';
+    let currentDestinationSelected = packagesDatabase.islamic[0];
+    let currentViewMode = '3d'; // '3d' or 'grid'
+    
+    // Spring physics state
+    let targetIndex = 0;
+    let currentIndex = 0;
+    let isAutoplayActive = true;
+    let autoplayTimer = null;
+
+    // Change category handler
+    function changeCategory(catKey) {
+      currentCategory = catKey;
+
+      // Update Tab Styles
+      ['islamic', 'indian', 'international'].forEach(k => {
+        const btn = document.getElementById(`catBtn-${k}`);
+        if (k === catKey) {
+          btn.className = "px-5 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-wider uppercase transition shadow-md bg-gold-600 text-white flex items-center gap-2";
+        } else {
+          btn.className = "px-5 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-wider uppercase transition bg-white text-royal-espresso border border-gold-400 hover:border-gold-600 flex items-center gap-2 shadow-sm";
+        }
+      });
+
+      // Reset carousel indexing
+      targetIndex = 0;
+      currentIndex = 0;
+
+      // Re-render
+      render3DCarousel();
+      renderGridView();
+      populateEstimatorOptions();
+    }
+
+    function filterCategoryDirect(catKey) {
+      showPage('page-home');
+      changeCategory(catKey);
+      scrollToDestinations();
+    }
+
+    function scrollToDestinations() {
+      showPage('page-home');
+      const el = document.getElementById('destinations-section');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // View Switching: 3D vs Grid
+    function switchPackageView(mode) {
+      currentViewMode = mode;
+      const stage = document.getElementById('carouselStage');
+      const grid = document.getElementById('destinationsGridView');
+      const controls = document.getElementById('carouselControlsGroup');
+      const btn3D = document.getElementById('viewBtn3D');
+      const btnGrid = document.getElementById('viewBtnGrid');
+
+      if (mode === 'grid') {
+        stage.classList.add('hidden');
+        grid.classList.remove('hidden');
+        grid.classList.add('grid');
+        controls.classList.add('opacity-40', 'pointer-events-none');
+        btnGrid.className = "px-4 py-2 rounded-full bg-gold-600 text-white shadow-sm transition";
+        btn3D.className = "px-4 py-2 rounded-full text-royal-espresso hover:text-gold-800 transition";
+        renderGridView();
+      } else {
+        grid.classList.add('hidden');
+        grid.classList.remove('grid');
+        stage.classList.remove('hidden');
+        controls.classList.remove('opacity-40', 'pointer-events-none');
+        btn3D.className = "px-4 py-2 rounded-full bg-gold-600 text-white shadow-sm transition";
+        btnGrid.className = "px-4 py-2 rounded-full text-royal-espresso hover:text-gold-800 transition";
+      }
+    }
+
+    // Render Clean Grid
+    function renderGridView() {
+      const list = packagesDatabase[currentCategory];
+      const grid = document.getElementById('destinationsGridView');
+
+      grid.innerHTML = list.map(item => `
+        <div class="rounded-2xl bg-white border border-gold-300 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between group">
+          <div>
+            <div class="relative h-48 w-full overflow-hidden bg-royal-charcoal">
+              <img src="${item.image}" alt="${item.landmark}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 filter brightness-95" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <div class="absolute top-2.5 right-2.5 px-3 py-1 rounded-full bg-black/60 text-[10px] font-bold text-amber-200 border border-gold-400/60 font-cinzel">
+                ${item.badge}
+              </div>
+              <div class="absolute bottom-2 left-3 px-2.5 py-0.5 rounded bg-gold-600 text-white text-[10px] font-cinzel font-bold uppercase">
+                ${item.duration}
+              </div>
+            </div>
+            
+            <div class="p-5">
+              <div class="flex justify-between items-baseline">
+                <h3 class="font-cinzel text-lg font-bold text-royal-espresso">${item.name}</h3>
+                <span class="text-[10px] font-bold text-green-700 bg-green-50 px-2 py-0.5 rounded border border-green-200 uppercase">Available</span>
+              </div>
+              <span class="text-[11px] font-semibold text-gold-800 block mt-0.5">${item.landmark}</span>
+              <p class="text-xs text-neutral-600 mt-2 font-medium leading-relaxed">${item.desc}</p>
+              
+              <div class="mt-4 pt-3 border-t border-neutral-100 flex items-center justify-between">
+                <span class="text-[10px] uppercase font-bold text-neutral-400">Starting From</span>
+                <span class="font-cinzel text-base font-extrabold text-royal-espresso">₹${item.normal.toLocaleString('en-IN')}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 pt-0">
+            <button onclick="selectDestinationAndOpen('${item.id}')" class="btn-gold-luxury w-full py-2.5 rounded-xl text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+              <span>View 3 Tiers</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Render 3D Floating Architectural Element Cards
+    function render3DCarousel() {
+      const track = document.getElementById('carouselTrack');
+      track.innerHTML = '';
+      const list = packagesDatabase[currentCategory];
+
+      list.forEach((item, idx) => {
+        const card = document.createElement('div');
+        card.className = 'carousel-3d-card';
+        card.id = `carousel-card-${idx}`;
+        card.setAttribute('data-index', idx);
+
+        card.innerHTML = `
+          <div class="gold-foil-border h-full w-full shadow-2xl">
+            <div class="floating-element-body h-full w-full rounded-[26px] bg-gradient-to-b from-[#FFFDF8] via-[#FAF3E0] to-[#F3E3BC] flex flex-col justify-between overflow-hidden relative border border-gold-300">
+              
+              <!-- Cutout Arch Architectural Top -->
+              <div class="relative h-52 w-full overflow-hidden bg-royal-charcoal flex-shrink-0 element-card-arch">
+                <img 
+                  src="${item.image}" 
+                  alt="${item.landmark}" 
+                  class="w-full h-full object-cover transition-transform duration-700 hover:scale-110 filter brightness-95"
+                  loading="lazy"
+                  onerror="this.src='https://placehold.co/600x400/1a1815/d4af37?text=Landmark'"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#FAF3E0] via-transparent to-black/50"></div>
+                
+                <!-- Landmark Cutout Arch Framing -->
+                <div class="absolute top-0 inset-x-0 flex justify-center pointer-events-none opacity-40">
+                  <svg width="280" height="45" viewBox="0 0 280 45" fill="none">
+                    <path d="M0 0 C70 0, 110 40, 140 40 C170 40, 210 0, 280 0" stroke="url(#richGoldGrad)" stroke-width="2.5" fill="none"/>
+                  </svg>
+                </div>
+
+                <!-- Architectural Landmark Badge -->
+                <div class="absolute top-2.5 right-2.5 px-3 py-1 rounded-full bg-black/65 backdrop-blur-md border border-gold-400/80 text-[10px] font-bold text-amber-200 font-cinzel">
+                  ${item.badge}
+                </div>
+
+                <!-- Duration Tag -->
+                <div class="absolute bottom-2 left-3 px-2.5 py-0.5 rounded-md bg-gold-600/90 text-white text-[10px] font-cinzel font-bold tracking-wider uppercase">
+                  ${item.duration}
+                </div>
+              </div>
+
+              <!-- Content Body -->
+              <div class="px-5 py-3 flex-grow flex flex-col justify-between text-center">
+                <div>
+                  <h3 class="font-cinzel text-xl font-extrabold text-royal-espresso tracking-wide leading-tight">
+                    ${item.name}
+                  </h3>
+                  <span class="text-[11px] font-bold text-gold-800 uppercase tracking-wider block mt-0.5 font-cinzel">
+                    ${item.landmark}
+                  </span>
+                  <p class="text-[11px] text-neutral-700 font-semibold mt-1.5 line-clamp-2 leading-relaxed">
+                    ${item.desc}
+                  </p>
+                </div>
+
+                <div class="my-2 py-2 px-3 rounded-xl bg-white/80 border border-gold-300 flex items-center justify-between shadow-sm">
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-neutral-500">Starts From</span>
+                  <span class="font-cinzel text-lg font-extrabold text-royal-espresso">₹${item.normal.toLocaleString('en-IN')}</span>
+                </div>
+              </div>
+
+              <!-- Bottom CTA Button -->
+              <div class="px-5 pb-4 pt-1">
+                <button onclick="event.stopPropagation(); selectDestinationAndOpen('${item.id}')" class="btn-gold-luxury w-full py-2.5 rounded-xl text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow">
+                  <span>Explore 3 Tiers</span>
+                  <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </button>
+              </div>
+
+              <!-- Halo Reflection -->
+              <div class="card-reflection"></div>
+            </div>
+          </div>
+        `;
+
+        card.onclick = () => {
+          if (Math.round(currentIndex) === idx) {
+            selectDestinationAndOpen(item.id);
+          } else {
+            targetIndex = idx;
+          }
+        };
+
+        track.appendChild(card);
+      });
+    }
+
+    // 60fps Spring Damped Animation Loop (Generous 380px X-Spacing, Zero Overlap)
+    function startContinuousAnimationLoop() {
+      function renderFrame() {
+        if (currentViewMode === '3d') {
+          const list = packagesDatabase[currentCategory];
+          const total = list.length;
+          const isMobile = window.innerWidth < 640;
+          const stepX = isMobile ? 280 : 380; // Generous horizontal spacing
+
+          currentIndex += (targetIndex - currentIndex) * 0.12;
+
+          list.forEach((_, idx) => {
+            const card = document.getElementById(`carousel-card-${idx}`);
+            if (!card) return;
+
+            let diff = idx - currentIndex;
+            while (diff < -total / 2) diff += total;
+            while (diff > total / 2) diff -= total;
+
+            const absDiff = Math.abs(diff);
+
+            let x = 0;
+            let z = 0;
+            let rotateY = 0;
+            let scale = 1;
+            let opacity = 1;
+
+            if (absDiff < 0.05) {
+              // Active Center Card
+              x = diff * stepX;
+              z = 0;
+              rotateY = 0;
+              scale = 1.05;
+              opacity = 1;
+            } else {
+              const sign = Math.sign(diff);
+              x = sign * (Math.pow(absDiff, 0.92) * stepX);
+              z = -Math.min(360, absDiff * 95);
+              rotateY = -sign * Math.min(25, absDiff * 14);
+              scale = Math.max(0.72, 1 - absDiff * 0.13);
+              opacity = absDiff > 2.2 ? Math.max(0, 1 - (absDiff - 2.2) * 1.5) : Math.max(0.35, 1 - absDiff * 0.28);
+            }
+
+            const zIndex = Math.round(100 - absDiff * 15);
+
+            card.style.transform = `translate3d(${x}px, 0px, ${z}px) rotateY(${rotateY}deg) scale(${scale})`;
+            card.style.zIndex = zIndex;
+            card.style.opacity = opacity;
+            card.style.pointerEvents = opacity < 0.4 ? 'none' : 'auto';
+
+            if (absDiff < 0.3) {
+              card.style.filter = 'drop-shadow(0 20px 30px rgba(212, 175, 55, 0.45)) brightness(1)';
+            } else {
+              card.style.filter = 'drop-shadow(0 8px 16px rgba(0,0,0,0.12)) brightness(0.9)';
+            }
+          });
+
+          // Active Item Metadata Updates
+          const activeIdx = ((Math.round(currentIndex) % total) + total) % total;
+          const activeData = list[activeIdx];
+          if (activeData && activeData.id !== currentDestinationSelected.id) {
+            currentDestinationSelected = activeData;
+            document.getElementById('carouselActiveLandmarkName').innerText = activeData.name.toUpperCase();
+            document.getElementById('activeLandmarkTitle').innerText = activeData.name;
+            document.getElementById('activeLandmarkSubtitle').innerText = activeData.landmark;
+            document.getElementById('activeLandmarkBadge').innerText = activeData.region;
+          }
+        }
+
+        requestAnimationFrame(renderFrame);
+      }
+
+      requestAnimationFrame(renderFrame);
+    }
+
+    function stepCarousel(direction) {
+      targetIndex += direction;
+    }
+
+    function startCarouselAutoplay() {
+      if (autoplayTimer) clearInterval(autoplayTimer);
+      autoplayTimer = setInterval(() => {
+        if (isAutoplayActive) {
+          targetIndex += 1;
+        }
+      }, 4200);
+    }
+
+    function toggleCarouselAutoplay() {
+      isAutoplayActive = !isAutoplayActive;
+      const icon = document.getElementById('autoplayIcon');
+      icon.className = isAutoplayActive ? 'fa-solid fa-pause text-xs' : 'fa-solid fa-play text-xs';
+    }
+
+    // Touch and Mouse Interactions
+    function setupCarouselInteractions() {
+      const stage = document.getElementById('carouselStage');
+      let startX = 0;
+      let isDragging = false;
+      let dragDelta = 0;
+
+      stage.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX;
+        dragDelta = 0;
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        dragDelta = e.clientX - startX;
+      });
+
+      window.addEventListener('mouseup', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        if (Math.abs(dragDelta) > 35) {
+          targetIndex += dragDelta < 0 ? 1 : -1;
+        }
+      });
+
+      stage.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        dragDelta = 0;
+      }, { passive: true });
+
+      stage.addEventListener('touchmove', (e) => {
+        dragDelta = e.touches[0].clientX - startX;
+      }, { passive: true });
+
+      stage.addEventListener('touchend', () => {
+        if (Math.abs(dragDelta) > 30) {
+          targetIndex += dragDelta < 0 ? 1 : -1;
+        }
+      });
+
+      stage.addEventListener('wheel', (e) => {
+        if (Math.abs(e.deltaX) > 20 || Math.abs(e.deltaY) > 20) {
+          e.preventDefault();
+          targetIndex += (e.deltaY > 0 || e.deltaX > 0) ? 1 : -1;
+        }
+      }, { passive: false });
+    }
+
+    function openCurrentSelectedLandmarkDetail() {
+      selectDestinationAndOpen(currentDestinationSelected.id);
+    }
+
+    // Page Switching (Page 1 vs Page 2)
+    function showPage(pageId) {
+      const pHome = document.getElementById('page-home');
+      const pDetail = document.getElementById('page-destination-detail');
+
+      if (pageId === 'page-destination-detail') {
+        pHome.classList.add('hidden');
+        pDetail.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        pDetail.classList.add('hidden');
+        pHome.classList.remove('hidden');
+      }
+    }
+
+    function selectDestinationById(id) {
+      // Find category
+      for (const cat in packagesDatabase) {
+        const found = packagesDatabase[cat].find(item => item.id === id);
+        if (found) {
+          changeCategory(cat);
+          selectDestinationAndOpen(id);
+          return;
+        }
+      }
+    }
+
+    function selectDestinationAndOpen(destId) {
+      let found = null;
+      let foundCat = currentCategory;
+
+      for (const cat in packagesDatabase) {
+        const item = packagesDatabase[cat].find(d => d.id === destId);
+        if (item) {
+          found = item;
+          foundCat = cat;
+          break;
+        }
+      }
+
+      if (!found) found = packagesDatabase.islamic[0];
+      currentDestinationSelected = found;
+
+      const catLabelMap = {
+        islamic: '1. Islamic Religious Package',
+        indian: '2. Incredible India Package',
+        international: '3. International Holiday Package'
+      };
+
+      document.getElementById('selectedCatLabel').innerText = catLabelMap[foundCat] || 'Signature Package';
+      document.getElementById('selectedDestinationTitle').innerText = found.name;
+      document.getElementById('bannerDestSpan').innerText = found.name;
+      document.getElementById('detailLandmarkThumb').src = found.image;
+      document.getElementById('detailLandmarkHighlight').innerText = `${found.landmark} (${found.badge})`;
+      document.getElementById('detailDurationText').innerText = `Duration: ${found.duration} | Fully Customized 3-Tier Comfort`;
+
+      document.getElementById('normalTierPrice').innerText = `₹${found.normal.toLocaleString('en-IN')}`;
+      document.getElementById('premiumTierPrice').innerText = `₹${found.premium.toLocaleString('en-IN')}`;
+      document.getElementById('proTierPrice').innerText = `₹${found.pro.toLocaleString('en-IN')}`;
+
+      showPage('page-destination-detail');
+    }
+
+    // ===============================================================
+    // CUSTOMER TRUST: GALLERY, VIDEOS & REVIEWS RENDERING
+    // ===============================================================
+    function filterTrustContent(tabKey) {
+      const allTabs = ['all', 'videos', 'photos', 'reviews'];
+      allTabs.forEach(t => {
+        const btn = document.getElementById(`trustTabBtn-${t}`);
+        if (!btn) return;
+        if (t === tabKey) {
+          btn.className = "px-5 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-wider uppercase transition shadow-md bg-gold-600 text-white flex items-center gap-2";
+        } else {
+          btn.className = "px-5 py-2.5 rounded-full text-xs font-cinzel font-bold tracking-wider uppercase transition bg-white text-royal-espresso border border-gold-400 hover:border-gold-600 flex items-center gap-2 shadow-sm";
+        }
+      });
+
+      const blockVideos = document.getElementById('trustBlock-videos');
+      const blockPhotos = document.getElementById('trustBlock-photos');
+      const blockReviews = document.getElementById('trustBlock-reviews');
+
+      if (tabKey === 'all') {
+        blockVideos.classList.remove('hidden');
+        blockPhotos.classList.remove('hidden');
+        blockReviews.classList.remove('hidden');
+      } else if (tabKey === 'videos') {
+        blockVideos.classList.remove('hidden');
+        blockPhotos.classList.add('hidden');
+        blockReviews.classList.add('hidden');
+      } else if (tabKey === 'photos') {
+        blockVideos.classList.add('hidden');
+        blockPhotos.classList.remove('hidden');
+        blockReviews.classList.add('hidden');
+      } else if (tabKey === 'reviews') {
+        blockVideos.classList.add('hidden');
+        blockPhotos.classList.add('hidden');
+        blockReviews.classList.remove('hidden');
+      }
+    }
+
+    function renderPhotoGallery(filter = 'all') {
+      const container = document.getElementById('galleryPhotoGrid');
+      const filtered = filter === 'all' ? galleryPhotosData : galleryPhotosData.filter(p => p.tag === filter);
+
+      container.innerHTML = filtered.map(photo => `
+        <div onclick="openPhotoLightbox('${photo.src}', '${photo.caption}', '${photo.sub}')" class="group relative h-48 sm:h-56 rounded-2xl overflow-hidden bg-royal-charcoal border-2 border-gold-300 shadow-md cursor-pointer">
+          <img src="${photo.src}" alt="${photo.caption}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-95" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-95 transition"></div>
+          
+          <div class="absolute bottom-3 inset-x-3 text-left">
+            <span class="font-cinzel text-xs font-bold text-white block group-hover:text-gold-300 transition line-clamp-1">${photo.caption}</span>
+            <span class="text-[10px] text-cream-200/80 block mt-0.5 line-clamp-1">${photo.sub}</span>
+          </div>
+
+          <div class="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-black/60 text-gold-300 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition shadow">
+            <i class="fa-solid fa-expand"></i>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterGalleryPhotos(tag) {
+      document.querySelectorAll('.photoFilterBtn').forEach(btn => {
+        if (btn.getAttribute('data-tag') === tag) {
+          btn.className = "photoFilterBtn px-3 py-1 rounded-full bg-gold-600 text-white shadow-sm";
+        } else {
+          btn.className = "photoFilterBtn px-3 py-1 rounded-full bg-white text-royal-espresso border border-gold-300";
+        }
+      });
+      renderPhotoGallery(tag);
+    }
+
+    function renderCustomerReviews() {
+      const container = document.getElementById('reviewsGridContainer');
+      container.innerHTML = customerReviewsData.map(rev => `
+        <div class="p-6 rounded-2xl bg-white border border-gold-300/80 shadow-md flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex text-amber-500 text-xs">
+                ${Array(rev.rating).fill('<i class="fa-solid fa-star"></i>').join('')}
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-green-100 text-green-800 border border-green-300 font-cinzel">
+                <i class="fa-solid fa-circle-check"></i> Verified Pilgrim
+              </span>
+            </div>
+
+            <p class="text-xs text-neutral-700 leading-relaxed font-medium italic">
+              "${rev.story}"
+            </p>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-neutral-100 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-800 flex items-center justify-center font-cinzel font-bold text-sm shrink-0 border border-gold-300">
+              ${rev.author.charAt(0)}
+            </div>
+            <div>
+              <h4 class="font-cinzel text-xs font-bold text-royal-espresso">${rev.author}</h4>
+              <span class="text-[10px] text-neutral-500 block">${rev.city} • ${rev.tour}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Video Player Modal Control
+    function openVideoPlayer(title, subtitle, desc, poster, duration, origin) {
+      document.getElementById('videoPlayerTitle').innerText = title;
+      document.getElementById('videoPlayerSubtitle').innerText = desc;
+      document.getElementById('videoPlayerPoster').src = poster;
+      document.getElementById('videoPlayerDuration').innerText = `00:00 / ${duration}`;
+      document.getElementById('videoPlayerOrigin').innerText = origin;
+
+      const modal = document.getElementById('videoModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeVideoPlayer() {
+      const modal = document.getElementById('videoModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // Lightbox Control
+    function openPhotoLightbox(src, caption, sub) {
+      document.getElementById('lightboxImage').src = src;
+      document.getElementById('lightboxCaption').innerText = caption;
+      document.getElementById('lightboxSub').innerText = sub;
+      const modal = document.getElementById('photoLightboxModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closePhotoLightbox() {
+      const modal = document.getElementById('photoLightboxModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // Review Submit Modal Control
+    function openReviewSubmitModal() {
+      const modal = document.getElementById('submitReviewModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeReviewSubmitModal() {
+      const modal = document.getElementById('submitReviewModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function handleReviewSubmit(e) {
+      e.preventDefault();
+      const author = document.getElementById('reviewAuthorName').value;
+      const city = document.getElementById('reviewAuthorCity').value;
+      const tour = document.getElementById('reviewTourCategory').value;
+      const story = document.getElementById('reviewStoryText').value;
+
+      customerReviewsData.unshift({
+        author: author,
+        city: city,
+        tour: tour,
+        rating: 5,
+        date: 'Just Now',
+        story: story
+      });
+
+      renderCustomerReviews();
+      closeReviewSubmitModal();
+      showToast("JazakAllah Khair! Your story has been successfully added to our Trust Board.");
+      e.target.reset();
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const icon = document.getElementById('menuIcon');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        menu.classList.add('hidden');
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    }
+
+    // Direct WhatsApp Links
+    function openWhatsAppChat(customText) {
+      const phone = "919876543210";
+      const message = encodeURIComponent(customText || "Assalamu Alaikum, I would like to inquire about Makki Madani Tours.");
+      window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${message}`, '_blank');
+    }
+
+    function bookTierDirect(tierName) {
+      openWhatsAppChat(`Assalamu Alaikum, I want to book the *${tierName} Tier* for *${currentDestinationSelected.name}* (${currentDestinationSelected.landmark}). Please share dates, visa details, and availability.`);
+    }
+
+    // Cost Estimator Modal Logic
+    function populateEstimatorOptions() {
+      const select = document.getElementById('calcDestinationSelect');
+      select.innerHTML = '';
+
+      const allItems = [
+        ...packagesDatabase.islamic.map(i => ({ ...i, group: 'Islamic Religious' })),
+        ...packagesDatabase.indian.map(i => ({ ...i, group: 'Incredible India' })),
+        ...packagesDatabase.international.map(i => ({ ...i, group: 'International' }))
+      ];
+
+      allItems.forEach(item => {
+        const opt = document.createElement('option');
+        opt.value = item.id;
+        opt.text = `[${item.group}] ${item.name} (${item.landmark})`;
+        select.appendChild(opt);
+      });
+    }
+
+    function openEstimatorModal() {
+      document.getElementById('costModal').classList.remove('hidden');
+      document.getElementById('costModal').classList.add('flex');
+      calculateEstimate();
+    }
+
+    function closeEstimatorModal() {
+      document.getElementById('costModal').classList.add('hidden');
+      document.getElementById('costModal').classList.remove('flex');
+    }
+
+    function calculateEstimate() {
+      const destId = document.getElementById('calcDestinationSelect').value;
+      const tierKey = document.getElementById('calcTier').value;
+      const guests = parseInt(document.getElementById('calcPilgrims').value) || 1;
+      const sharingMultiplier = parseFloat(document.getElementById('calcSharing').value) || 1;
+
+      // Find destination
+      let destObj = null;
+      for (const cat in packagesDatabase) {
+        const f = packagesDatabase[cat].find(d => d.id === destId);
+        if (f) { destObj = f; break; }
+      }
+      if (!destObj) destObj = packagesDatabase.islamic[0];
+
+      let basePrice = destObj.normal;
+      if (tierKey === 'premium') basePrice = destObj.premium;
+      if (tierKey === 'pro') basePrice = destObj.pro;
+
+      const total = Math.round(basePrice * guests * sharingMultiplier);
+      document.getElementById('calculatedTotalDisplay').innerText = `₹${total.toLocaleString('en-IN')}`;
+    }
+
+    function bookCalculatedPackage() {
+      const select = document.getElementById('calcDestinationSelect');
+      const destText = select.options[select.selectedIndex].text;
+      const tier = document.getElementById('calcTier').value.toUpperCase();
+      const guests = document.getElementById('calcPilgrims').value;
+      const total = document.getElementById('calculatedTotalDisplay').innerText;
+      
+      closeEstimatorModal();
+      openWhatsAppChat(`Assalamu Alaikum, I calculated a package estimate for *${destText}* under *${tier} Tier* for *${guests} guests* totaling *${total}*. Please share departure details.`);
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      showToast("Thank you! Your inquiry has been sent to our tour managers.");
+      e.target.reset();
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toastNotification');
+      document.getElementById('toastMessage').innerText = msg;
+      toast.classList.remove('hidden');
+      toast.classList.add('flex');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.classList.remove('flex');
+      }, 4000);
+    }
+
+    // Floating Golden Particle Canvas
+    function initParticles() {
+      const canvas = document.getElementById('particles-canvas');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      let w, h;
+
+      function resize() {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      class Particle {
+        constructor() { this.reset(); }
+        reset() {
+          this.x = Math.random() * w;
+          this.y = Math.random() * h;
+          this.size = Math.random() * 2 + 0.6;
+          this.speedY = Math.random() * 0.35 - 0.17;
+          this.speedX = Math.random() * 0.35 - 0.17;
+          this.alpha = Math.random() * 0.45 + 0.15;
+        }
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          if (this.x < 0 || this.x > w || this.y < 0 || this.y > h) this.reset();
+        }
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(212, 175, 55, ${this.alpha})`;
+          ctx.fill();
+        }
+      }
+
+      for (let i = 0; i < 40; i++) particles.push(new Particle());
+
+      function loop() {
+        ctx.clearRect(0, 0, w, h);
+        particles.forEach(p => {
+          p.update();
+          p.draw();
+        });
+        requestAnimationFrame(loop);
+      }
+      loop();
+    }
+
+    // App Initialize on Window Load
+    window.onload = function() {
+      populateEstimatorOptions();
+      render3DCarousel();
+      renderGridView();
+      setupCarouselInteractions();
+      startContinuousAnimationLoop();
+      startCarouselAutoplay();
+      renderPhotoGallery('all');
+      renderCustomerReviews();
+      initParticles();
+    };
+  </script>
+</body>
+</html>
